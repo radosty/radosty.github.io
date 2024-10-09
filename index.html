@@ -81,17 +81,33 @@
       <div class="chart-description">
          <h2>Task 1: Two basic charts</h2>
          <p style="color: #333333;"<p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
-             Chart 1:
+             Chart 1: 
+             The first visualisation is a bar chart illustrating Primark's annual revenue growth from 2007-2023.
        </p>
         </div>
         <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
         </div>
         <p style="color: #333333;"<p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
             Chart 2:
+            The chart illustrates global fast fashion spending patterns for 2007 to 2023, comparing countries based on average items purchased and cost per item, providing insights into consumption behaviors and economic factors.
         </p>
         <figure id="Location3"></figure>
     </section>
- 
+ <section>
+      <div class="chart-description">
+         <h2>Task 2: Economics Observatory Visualisations</h2>
+         <p style="color: #333333;"<p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+             The two separate graphs, created from the Economics Observatory API, display U.S. GDP growth and nuclear power output trends from 2000 to 2023. One graph highlights the trajectory of economic growth, while the other focuses on the evolution of nuclear energy production, providing independent insights into both areas over time.
+             Visualisation 1:
+       </p>
+        </div>
+        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </div>
+        <p style="color: #333333;"<p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+            Visualisation 2:
+        </p>
+        <figure id="Location5"></figure>
+    </section>
     <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
@@ -113,6 +129,13 @@
         
         vegaEmbed('#Location3', figure_3_spec)
 
+    let figure_4_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/wk2chart2.json"; 
+
+        vegaEmbed('#Location4', figure_4_spec)
+
+    let figure_5_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/wk2chart2.json"; 
+
+        vegaEmbed('#Location5', figure_5_spec)
         
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
