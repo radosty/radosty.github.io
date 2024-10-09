@@ -141,7 +141,11 @@
         
         vegaEmbed('#Location5', figure_5_spec)
 
-        
+        window.onload = function() {
+    vegaEmbed('#Location4', figure_4_spec);
+    vegaEmbed('#Location5', figure_5_spec);
+};
+
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
         // e.g. 
