@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Revenue of Primark worldwide from financial year 2007 to 2023",
+    "subtitle": "(million GBP)",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/Primark%20Revenues%202.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "height": 300,
+  "width": 500,
+  "mark": {
+    "type": "bar",
+    "color": "#27AE60"
+  },
+  "encoding": {
+    "x": {
+      "field": "Time",
+      "type": "nominal",
+      "axis": {
+        "title": "Financial Year",
+        "labelAngle": 45
+      }
+    },
+    "y": {
+      "field": "Revenue",
+      "type": "quantitative",
+      "title": "Revenue (million GBP)"
+    }
+  }
+}
