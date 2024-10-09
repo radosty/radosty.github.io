@@ -9,7 +9,7 @@
     "color": "#000000",
     "subtitleColor": "#000000"
   },
-  "height": 250,  // Correcting height to be a number, not a string
+  "height": 250,  
   "width": "container",
   "autosize": {
     "type": "fit",
@@ -29,7 +29,7 @@
   "mark": {
     "type": "line",
     "color": "#9a244f",
-    "strokeWidth": 2  // Correcting strokeWidth to be a number, not a string
+    "strokeWidth": 2  
   },
   "encoding": {
     "x": {
