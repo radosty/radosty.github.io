@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Fast Fashion Data: Average Value per Person, Items, and Average Value per Item",
+    "subtitle": "Bubble size represents Average Value per Item (in USD)",
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/Consumer%20behaviour%20data.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "height": 400,
+  "width": 600,
+  "mark": {
+    "type": "circle",
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Avg Items per Person",
+      "type": "quantitative",
+      "axis": {
+        "title": "Avg Items per Person"
+      }
+    },
+    "y": {
+      "field": "Avg Value per Person (in USD)",
+      "type": "quantitative",
+      "axis": {
+        "title": "Avg Value per Person (in USD)"
+      }
+    },
+    "size": {
+      "field": "Avg Value per Item (in USD)",
+      "type": "quantitative",
+      "legend": {
+        "title": "Avg Value per Item (in USD)"
+      }
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "legend": {
+        "title": "Country"
+      }
+    }
+  }
+}
