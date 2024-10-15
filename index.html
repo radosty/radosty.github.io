@@ -1,42 +1,56 @@
 <!DOCTYPE html>
-<html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
-
+<html>
 <head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
-
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
     <link rel="stylesheet" type="text/css" href="index.css">
-    <title>Radost Yosifova's Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+    <title>Radost Yosifova's Portfolio</title>
 
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <!-- Vega-lite links for graph visualizations -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
 
-
     <style>
         body {
             background-color: #F0F0F0;
             font-family: 'Lora', serif;
-            color: white; /* Adjust link color for visibility */
-              }
-        h1,h2,h3 {
-            font-family:'Lora', serif;
+            color: #5C4033; /* Walnut color for main text */
+        }
+
+        /Navy blue banner for the top /
+        .top-banner {
+            background-color: #001f3f; /* Navy blue */
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+
+        /* Style for the navigation links in the banner */
+        .top-banner li {
+            display: inline;
+            margin-right: 20px;
+            list-style: none;
+        }
+
+        .top-banner a {
+            color: white; /* Visible white text */
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .top-banner a:hover {
+            text-decoration: underline;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
             color: #5C4033;
-            font-style: italic
-            }
+            font-style: italic;
+        }
 
         p {
-            color: #5C4033; /* Walnut color for text */
+            color: #5C4033;
         }
 
         .chart-description p {
@@ -46,15 +60,19 @@
         #chartGrid {
             display: flex;
         }
-        
     </style>
 </head>
 <body>
+ 
   <div class="top-banner">
-        <li><a href="https://www.linkedin.com/in/radost-yosifova-11683b272/">LinkedIn</a></li>
-        <li><a href="https://github.com/radosty">GitHub</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="project.html">Project</a></li>
-    </div>
-    <h2>Radost Yosifova's website</h2>
+    <li><a href="https://www.linkedin.com/in/radost-yosifova-11683b272/">LinkedIn</a></li>
+    <li><a href="https://github.com/radosty">GitHub</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="project.html">Project</a></li>
+  </div>
+
+  
+  <h2>Radost Yosifova's Website</h2>
 </body>
+</html>
+
