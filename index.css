@@ -1,22 +1,16 @@
-/* This is an example CSS file. If you include it in your portfolio, it'll provide some clean and basic styling */
-/* for your page. Feel free to experiment with the values, or copy them into a new file and use that instead. */
+/* Basic styling for a clean look for your portfolio */
 
-/* These are comments in CSS. Comments don't do anything except explain your working to make code easier to understand. */
-
-
-body { /* We can style any HTML element by using its name - here we're styling the body */
-  /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
+/* Style for the entire body */
+body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #333;
   line-height: 1.6;
-  /* we want a white page, that's centered and not too wide */
   background-color: #fff;
-  margin:0 auto;
+  margin: 0 auto;
   max-width: 800px;
   padding-top: 60px;
 }
-
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -26,8 +20,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* We want the headings to be a little bigger than the paragraph text */
-.big { /* This is the class we created in the HTML file, you can use it to style any element */
+/* Specific heading sizes */
+.big {
   font-size: 2.5em;
 }
 
@@ -39,18 +33,18 @@ h2 {
   font-size: 1.25em;
 }
 
-/* Paragraph */
+/* Paragraph styling */
 p {
   margin-bottom: 1em;
   font-weight: 300;
 }
 
+/* Section spacing */
 section {
-  margin-bottom: 2.5em;  /* We want a little more space between sections */
+  margin-bottom: 2.5em;
 }
 
-/* Links */
-/* We want the links to be a little more visible  and a different color */
+/* Link styling */
 a {
   color: #065f46;
   text-decoration: none;
@@ -59,9 +53,46 @@ a {
 a:hover {
   text-decoration: underline;
 }
-  
+
 /* Images */
 img {
   max-width: 100%;
   height: auto;
 }
+
+/* New Styles for the Top Banner */
+.top-banner {
+  background-color: #001f3f; /* Navy blue background */
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  padding: 10px; /* Adds padding around the banner */
+  position: fixed; /* Keeps the banner fixed at the top */
+  width: 100%; /* Makes sure the banner spans the full width of the page */
+  top: 0; /* Positions the banner at the top of the viewport */
+  left: 0; /* Ensures it's aligned with the left edge */
+  z-index: 1000; /* Keeps the banner on top of other content */
+}
+
+/* Styling for the navigation links in the banner */
+.top-banner li {
+  display: inline;
+  margin-right: 20px;
+  list-style: none;
+}
+
+.top-banner a {
+  color: white; /* White text for visibility on navy background */
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.top-banner a:hover {
+  text-decoration: underline;
+}
+
+/* Adjustments for main content to avoid being hidden behind the fixed banner */
+body {
+  padding-top: 80px; /* Additional padding to prevent content from hiding behind the fixed banner */
+}
+
