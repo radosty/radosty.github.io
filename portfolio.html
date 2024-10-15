@@ -1,29 +1,6 @@
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
-
 <!DOCTYPE html>
 <html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
-
 <head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
-
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
     <link rel="stylesheet" type="text/css" href="index.css">
     <title>Radost Yosifova's Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
 
@@ -41,12 +18,14 @@
             color: white; /* Adjust link color for visibility */
               }
         h1,h2,h3 {
+            font-size: 2em;
             font-family:'Lora', serif;
             color: #5C4033;
             font-style: italic
             }
 
         p {
+            font-size: 1em;
             color: #5C4033; /* Walnut color for text */
         }
 
@@ -57,11 +36,50 @@
         #chartGrid {
             display: flex;
         }
+        top-banner {
+            background-color: #001f3f;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .top-banner li {
+            display: inline;
+            margin-right: 20px;
+            list-style: none;
+        }
+
+        .top-banner a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .top-banner a:hover {
+            text-decoration: underline;
+        }
+
+        /* No content overlap with banner */
+        body {
+            padding-top: 80px;
+        }
         
     </style>
 </head>
 
 <body> 
+    <div class="top-banner">
+        <li><a href="https://www.linkedin.com/in/radost-yosifova-11683b272/">LinkedIn</a></li>
+        <li><a href="https://github.com/radosty">GitHub</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="project.html">Project</a></li>
+    </div>
 <!-- The body tag contains the elements that visitors to our page will see. -->
     <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
         <!-- This is a header, it is the largest text on the page -->
