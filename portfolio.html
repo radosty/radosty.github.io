@@ -15,17 +15,24 @@
         body {
             background-color: #F0F0F0;
             font-family: 'Lora', serif;
-            color: white; /* Adjust link color for visibility */
+            color: #333333;
+            padding-top: 80px;
+            margin: 0;
               }
-        h1,h2,h3 {
-            font-size: 2em;
+        h1 {
+            font-size: 1.8em;
             font-family:'Lora', serif;
             color: #5C4033;
-            font-style: italic
+            text-align: center;
             }
+        h2 {
+            font-size: 1.5em; /* Reduced to a standard subheading size */
+            color: #5C4033;
+            font-style: italic;
+        }
 
         p {
-            font-size: 1em;
+            font-size: 1rem;
             color: #5C4033; /* Walnut color for text */
         }
 
@@ -81,15 +88,12 @@
         <li><a href="project.html">Project</a></li>
     </div>
 <!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Radost Yosifova's Data Science Portfolio
+    <h1> Radost Yosifova's Data Science Portfolio </h1>
 
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
     <section>
         <div class="chart-description">
             <h2>Example: A basic chart</h2>
-            <p style="color: #333333;"> <!-- This is a paragraph, it's the main way to display text on a web page -->
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
                 As a first example, we're using a basic chart from our repo.
             </p>
@@ -97,23 +101,17 @@
         <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
-    <!-- Do you want to add more sections? -->
-        <!-- Try copying pasting the section above -->
-        <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
-
-   
    <section>
       <div class="chart-description">
          <h2>Task 1: Two basic charts</h2>
-         <p style="color: #333333;"<p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+         <p>
              Chart 1: 
              The first visualisation is a bar chart illustrating Primark's annual revenue growth from 2007-2023.
        </p>
         </div>
         <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
         </div>
-        <p style="color: #333333;"<p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+        <p>
             Chart 2:
             The chart illustrates global fast fashion spending patterns for 2007 to 2023, comparing countries based on average items purchased and cost per item, providing insights into consumption behaviors and economic factors.
         </p>
@@ -122,16 +120,16 @@
  <section>
       <div class="chart-description">
          <h2>Task 2: Economics Observatory Visualisations</h2>
-         <p style="color: #333333;"<p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+         <p>
              The two separate graphs, created from the Economics Observatory API, display U.S. GDP growth and nuclear power output trends from 2000 to 2023. One graph highlights the trajectory of economic growth, while the other focuses on the evolution of nuclear energy production, providing independent insights into both areas over time.
          </p>
-         <p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+         <p>
             Visualisation 1:
          </p>
          </div>
          <figure id="Location4"></figure>
          </div>
-        <p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+        <p>
             Visualisation 2:
         </p>
         <figure id="Location5"></figure>
@@ -139,16 +137,16 @@
 <section>
         <div class="chart-description">
             <h2>Task 3: Festival of Economics</h2>
-            <p style="color: #333333;"<p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+            <p>
                 I came across an intriguing argument that diversifying teachers could foster discussions on the British Empire's colonial legacy and opressions. My visualisations below show a trend of predominantly White British teachers, highlighting the need for greater diversity in the teaching workforce.
             </p>
-            <p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+            <p>
                 Visualisation 1:
             </p>
         </div>
         <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
         </div>
-        <p style="color: #333333; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+        <p>
             Visualisation 2:
         </p>
         <figure id="Location7"></figure
