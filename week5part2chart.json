@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Household Final Consumption Expenditure per Capita by Country",
+    "subtitle": "GDP in USD (Excluding the US)",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 14,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/week5scrappedupdated.csv",
+    "format": {"type": "csv"}
+  },
+  "height": 400,  
+  "width": 400,   
+
+  "transform": [
+    {
+      "filter": "datum['HFCE per capita (USD)'] != null"  
+    },
+    {
+      "filter": "datum.Country != 'United States'"  
+    }
+  ],
+
+  "mark": {
+    "type": "circle",
+    "stroke": "black",  
+    "strokeWidth": 0.5 
+  },
+
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Country",
+      "axis": {
+        "labelAngle": -45,  // Rotate labels for better visibility
+        "labelFontSize": 10
+      }
+    },
+    "y": {
+      "field": "HFCE per capita (USD)",
+      "type": "quantitative",
+      "title": "GDP in USD",
+      "axis": {
+        "format": "$,.0f"  
+      }
+    },
+    "size": {
+      "field": "HFCE per capita (USD)", 
+      "type": "quantitative",
+      "scale": {
+        "range": [10, 300]  
+      },
+      "title": "GDP Size"
+    },
+    "color": {
+      "field": "HFCE per capita (USD)",
+      "type": "quantitative",
+      "scale": {
+        "range": ["#FF5733", "#C70039", "#900C3F", "#581845"]  
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "HFCE per capita (USD)", "type": "quantitative", "title": "GDP", "format": "$,.2f"}
+    ]
+  }
+}
