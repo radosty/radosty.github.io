@@ -39,6 +39,9 @@ p {
 /* Section spacing */
 section {
   margin-bottom: 2.5em;
+  padding: 20px; /* Add padding to sections for spacing */
+  background-color: #f9f9f9; /* Light gray background for contrast */
+  border-radius: 5px; /* Rounded corners */
 }
 
 /* Link styling */
@@ -92,4 +95,3 @@ img {
 body {
   padding-top: 80px; /* Additional padding to prevent content from hiding behind the fixed banner */
 }
-
