@@ -9,15 +9,12 @@ body {
   padding-top: 80px;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   color: #333;
-  margin-top: 24px;
-  margin-bottom: 16px;
+  margin: 24px 0 16px;
   font-weight: 600;
 }
 
-/* Specific heading sizes */
 .big {
   font-size: 2.5em;
 }
@@ -30,21 +27,18 @@ h2 {
   font-size: 1.25em;
 }
 
-/* Paragraph styling */
 p {
   margin-bottom: 1em;
   font-weight: 300;
 }
 
-/* Section spacing */
 section {
   margin-bottom: 2.5em;
-  padding: 20px; /* Add padding to sections for spacing */
-  background-color: #f9f9f9; /* Light gray background for contrast */
-  border-radius: 5px; /* Rounded corners */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
 }
 
-/* Link styling */
 a {
   color: #065f46;
   text-decoration: none;
@@ -54,26 +48,23 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Images */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* New Styles for the Top Banner */
 .top-banner {
-  background-color: #001f3f; /* Navy blue background */
+  background-color: #001f3f;
   display: flex;
-  justify-content: flex-end; /* Aligns items to the right */
-  padding: 10px; /* Adds padding around the banner */
-  position: fixed; /* Keeps the banner fixed at the top */
-  width: 100%; /* Makes sure the banner spans the full width of the page */
-  top: 0; /* Positions the banner at the top of the viewport */
-  left: 0; /* Ensures it's aligned with the left edge */
-  z-index: 1000; /* Keeps the banner on top of other content */
+  justify-content: flex-end;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-/* Styling for the navigation links in the banner */
 .top-banner li {
   display: inline;
   margin-right: 20px;
@@ -81,7 +72,7 @@ img {
 }
 
 .top-banner a {
-  color: white; /* White text for visibility on navy background */
+  color: white;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
