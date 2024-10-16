@@ -1,0 +1,175 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "COVID-19 in Singapore - New Coronavirus Cases and Newly Discharged",
+  "title": {
+    "text": "COVID-19 IN SINGAPORE",
+    "subtitle": "NEW CORONAVIRUS CASES AND NEWLY DISCHARGED",
+    "subtitleFontStyle": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "middle",
+    "color": "black"
+      },
+  "width": 800,
+  "height": 800,
+  "data": {
+    "values": [
+      {"date": "Jan 23", "category": "New Cases", "count": 1},
+      {"date": "Jan 23", "category": "Discharged", "count": 0},
+      {"date": "Jan 24", "category": "New Cases", "count": 2},
+      {"date": "Jan 24", "category": "Discharged", "count": 0},
+      {"date": "Jan 25", "category": "New Cases", "count": 1},
+      {"date": "Jan 25", "category": "Discharged", "count": 0},
+      {"date": "Jan 26", "category": "New Cases", "count": 1},
+      {"date": "Jan 26", "category": "Discharged", "count": 0},
+      {"date": "Jan 27", "category": "New Cases", "count": 2},
+      {"date": "Jan 27", "category": "Discharged", "count": 0},
+      {"date": "Jan 28", "category": "New Cases", "count": 2},
+      {"date": "Jan 28", "category": "Discharged", "count": 0},
+      {"date": "Jan 29", "category": "New Cases", "count": 3},
+      {"date": "Jan 29", "category": "Discharged", "count": 0},
+      {"date": "Jan 30", "category": "New Cases", "count": 3},
+      {"date": "Jan 30", "category": "Discharged", "count": 0},
+      {"date": "Jan 31", "category": "New Cases", "count": 3},
+      {"date": "Jan 31", "category": "Discharged", "count": 0},
+      {"date": "Feb 1", "category": "New Cases", "count": 4},
+      {"date": "Feb 1", "category": "Discharged", "count": 1},
+      {"date": "Feb 2", "category": "New Cases", "count": 2},
+      {"date": "Feb 2", "category": "Discharged", "count": 1},
+      {"date": "Feb 3", "category": "New Cases", "count": 3},
+      {"date": "Feb 3", "category": "Discharged", "count": 1},
+      {"date": "Feb 4", "category": "New Cases", "count": 6},
+      {"date": "Feb 4", "category": "Discharged", "count": 1},
+      {"date": "Feb 5", "category": "New Cases", "count": 4},
+      {"date": "Feb 5", "category": "Discharged", "count": 1},
+      {"date": "Feb 6", "category": "New Cases", "count": 3},
+      {"date": "Feb 6", "category": "Discharged", "count": 0},
+      {"date": "Feb 7", "category": "New Cases", "count": 7},
+      {"date": "Feb 7", "category": "Discharged", "count": 3},
+      {"date": "Feb 8", "category": "New Cases", "count": 3},
+      {"date": "Feb 8", "category": "Discharged", "count": 0},
+      {"date": "Feb 9", "category": "New Cases", "count": 3},
+      {"date": "Feb 9", "category": "Discharged", "count": 3},
+      {"date": "Feb 10", "category": "New Cases", "count": 6},
+      {"date": "Feb 10", "category": "Discharged", "count": 2},
+      {"date": "Feb 11", "category": "New Cases", "count": 8},
+      {"date": "Feb 11", "category": "Discharged", "count": 2},
+      {"date": "Feb 12", "category": "New Cases", "count": 9},
+      {"date": "Feb 12", "category": "Discharged", "count": 6},
+      {"date": "Feb 13", "category": "New Cases", "count": 5},
+      {"date": "Feb 13", "category": "Discharged", "count": 3},
+      {"date": "Feb 14", "category": "New Cases", "count": 5},
+      {"date": "Feb 14", "category": "Discharged", "count": 3},
+      {"date": "Feb 15", "category": "New Cases", "count": 4},
+      {"date": "Feb 15", "category": "Discharged", "count": 1},
+      {"date": "Feb 16", "category": "New Cases", "count": 4},
+      {"date": "Feb 16", "category": "Discharged", "count": 2},
+      {"date": "Feb 17", "category": "New Cases", "count": 5},
+      {"date": "Feb 17", "category": "Discharged", "count": 1},
+      {"date": "Feb 18", "category": "New Cases", "count": 5},
+      {"date": "Feb 18", "category": "Discharged", "count": 2},
+      {"date": "Feb 19", "category": "New Cases", "count": 2},
+      {"date": "Feb 19", "category": "Discharged", "count": 2},
+      {"date": "Feb 20", "category": "New Cases", "count": 3},
+      {"date": "Feb 20", "category": "Discharged", "count": 10},
+      {"date": "Feb 21", "category": "New Cases", "count": 0},
+      {"date": "Feb 21", "category": "Discharged", "count": 0},
+      {"date": "Feb 22", "category": "New Cases", "count": 0},
+      {"date": "Feb 22", "category": "Discharged", "count": 0},
+      {"date": "Feb 23", "category": "New Cases", "count": 0},
+      {"date": "Feb 23", "category": "Discharged", "count": 0},
+      {"date": "Feb 24", "category": "New Cases", "count": 0},
+      {"date": "Feb 24", "category": "Discharged", "count": 0},
+      {"date": "Feb 25", "category": "New Cases", "count": 0},
+      {"date": "Feb 25", "category": "Discharged", "count": 0},
+      {"date": "Feb 26", "category": "New Cases", "count": 0},
+      {"date": "Feb 26", "category": "Discharged", "count": 0},
+      {"date": "Feb 27", "category": "New Cases", "count": 0},
+      {"date": "Feb 27", "category": "Discharged", "count": 0},
+      {"date": "Feb 28", "category": "New Cases", "count": 0},
+      {"date": "Feb 28", "category": "Discharged", "count": 0},
+      {"date": "Mar 1", "category": "New Cases", "count": 6},
+      {"date": "Mar 1", "category": "Discharged", "count": 2},
+      {"date": "Mar 2", "category": "New Cases", "count": 5},
+      {"date": "Mar 2", "category": "Discharged", "count": 2},
+      {"date": "Mar 3", "category": "New Cases", "count": 2},
+      {"date": "Mar 3", "category": "Discharged", "count": 2},
+      {"date": "Mar 4", "category": "New Cases", "count": 4},
+      {"date": "Mar 4", "category": "Discharged", "count": 2},
+      {"date": "Mar 5", "category": "New Cases", "count": 4},
+      {"date": "Mar 5", "category": "Discharged", "count": 0},
+      {"date": "Mar 6", "category": "New Cases", "count": 8},
+      {"date": "Mar 6", "category": "Discharged", "count": 1},
+      {"date": "Mar 7", "category": "New Cases", "count": 8},
+      {"date": "Mar 7", "category": "Discharged", "count": 3},
+      {"date": "Mar 8", "category": "New Cases", "count": 10},
+      {"date": "Mar 8", "category": "Discharged", "count": 3},
+      {"date": "Mar 9", "category": "New Cases", "count": 9},
+      {"date": "Mar 9", "category": "Discharged", "count": 1},
+      {"date": "Mar 10", "category": "New Cases", "count": 6},
+      {"date": "Mar 10", "category": "Discharged", "count": 1},
+      {"date": "Mar 11", "category": "New Cases", "count": 3},
+      {"date": "Mar 11", "category": "Discharged", "count": 0},
+      {"date": "Mar 12", "category": "New Cases", "count": 3},
+      {"date": "Mar 12", "category": "Discharged", "count": 1},
+      {"date": "Mar 13", "category": "New Cases", "count": 13},
+      {"date": "Mar 13", "category": "Discharged", "count": 9},
+      {"date": "Mar 14", "category": "New Cases", "count": 13},
+      {"date": "Mar 14", "category": "Discharged", "count": 8}
+    ]
+  },
+  "facet": {
+    "column": {"field": "category", "type": "nominal", "title": null}
+  },
+  "spec": {
+    "layer": [
+      {
+        "mark": {"type": "bar", "width": 10, "opacity": 0.2},
+        "encoding": {
+          "x": {
+            "field": "date",
+            "type": "temporal",
+            "title": "Date",
+            "axis": {
+              "labelAngle": 45,
+              "tickCount": 6
+            }
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Count",
+            "scale": {"domain": [0, 15]}
+          },
+          "color": {
+            "field": "category",
+            "scale": {
+              "domain": ["New Cases", "Discharged"],
+              "range": ["#A93226", "#1A5276 "]
+            }
+          }
+        }
+      },
+      {
+        "mark": {"type": "line", "strokeWidth": 3},
+        "encoding": {
+          "x": {
+            "field": "date",
+            "type": "temporal",
+            "axis": {
+              "labelAngle": 45,
+              "tickCount": 6
+            }
+          },
+          "y": {"field": "count", "type": "quantitative"},
+          "color": {
+            "field": "category",
+            "scale": {
+              "domain": ["New Cases", "Discharged"],
+              "range": ["#A93226", "#1A5276"]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
