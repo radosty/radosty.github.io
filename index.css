@@ -6,7 +6,7 @@ body {
   background-color: #fff;
   margin: 0 auto;
   max-width: 800px;
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 /* Headings */
@@ -89,9 +89,4 @@ img {
 
 .top-banner a:hover {
   text-decoration: underline;
-}
-
-/* Adjustments for main content to avoid being hidden behind the fixed banner */
-body {
-  padding-top: 80px; /* Additional padding to prevent content from hiding behind the fixed banner */
 }
