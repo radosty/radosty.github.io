@@ -12,17 +12,28 @@
 
     <style>
         body {
-            background-color: #F0F0F0;
+            background-image: url('background_image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             font-family: 'Lora', serif;
-            color: #5C4033; /* Walnut color for main text */
+            color: #333333; /* Walnut color for main text */
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
         }
 
         /Navy blue banner for the top /
         .top-banner {
-            background-color: #001f3f; /* Navy blue */
+            background-color: #001f3f; 
             display: flex;
             justify-content: flex-end;
-            padding: 10px;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         /* Style for the navigation links in the banner */
@@ -43,10 +54,11 @@
             text-decoration: underline;
         }
 
-        h1, h2, h3 {
-            font-family: 'Lora', serif;
-            color: #5C4033;
-            font-style: italic;
+        h1 {
+            font-size: 2em;
+            margin-top: 20px;
+            color: white; 
+            text-align: center;
         }
 
         p {
@@ -72,7 +84,7 @@
   </div>
 
   
-  <h2>Radost Yosifova's Website</h2>
+  <h1>Radost Yosifova's Website</h1>
 </body>
 </html>
 
