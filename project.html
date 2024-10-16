@@ -57,11 +57,52 @@
         #chartGrid {
             display: flex;
         }
+                }
+        top-banner {
+            background-color: #001f3f;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .top-banner li {
+            display: inline;
+            margin-right: 20px;
+            list-style: none;
+        }
+
+        .top-banner a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .top-banner a:hover {
+            text-decoration: underline;
+        }
+
+        /* No content overlap with banner */
+        body {
+            padding-top: 80px;
+        }
         
     </style>
 </head>
 
 <body> 
+    <div class="top-banner">
+        <li><a href="https://www.linkedin.com/in/radost-yosifova-11683b272/">LinkedIn</a></li>
+        <li><a href="https://github.com/radosty">GitHub</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="project.html">Project</a></li>
+    </div>
+        
 <!-- The body tag contains the elements that visitors to our page will see. -->
     <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
         <!-- This is a header, it is the largest text on the page -->
