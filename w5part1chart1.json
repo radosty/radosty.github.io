@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "COVID-19 in Singapore - New Coronavirus Cases and Newly Discharged",
+  "title": {
+    "text": "COVID-19 IN SINGAPORE",
+    "subtitle": "NEW CORONAVIRUS CASES AND NEWLY DISCHARGED",
+    "subtitleFontStyle": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "middle",
+    "color": "black"
+  },
+
+  "width": 800,
+  "height": 400,
+  "data": {
+    "values": [
+      {"date": "Jan 23", "new_cases": 1, "discharged": 0},
+      {"date": "Jan 24", "new_cases": 2, "discharged": 0},
+      {"date": "Jan 25", "new_cases": 1, "discharged": 0},
+      {"date": "Jan 26", "new_cases": 1, "discharged": 0},
+      {"date": "Jan 27", "new_cases": 2, "discharged": 0},
+      {"date": "Jan 28", "new_cases": 2, "discharged": 0},
+      {"date": "Jan 29", "new_cases": 3, "discharged": 0},
+      {"date": "Jan 30", "new_cases": 3, "discharged": 0},
+      {"date": "Jan 31", "new_cases": 3, "discharged": 0},
+      {"date": "Feb 1", "new_cases": 4, "discharged": 1},
+      {"date": "Feb 2", "new_cases": 2, "discharged": 1},
+      {"date": "Feb 3", "new_cases": 3, "discharged": 0},
+      {"date": "Feb 4", "new_cases": 6, "discharged": 1},
+      {"date": "Feb 5", "new_cases": 4, "discharged": 1},
+      {"date": "Feb 6", "new_cases": 3, "discharged": 0},
+      {"date": "Feb 7", "new_cases": 7, "discharged": 3},
+      {"date": "Feb 8", "new_cases": 3, "discharged": 0},
+      {"date": "Feb 9", "new_cases": 3, "discharged": 3},
+      {"date": "Feb 10", "new_cases": 6, "discharged": 2},
+      {"date": "Feb 11", "new_cases": 8, "discharged": 2},
+      {"date": "Feb 12", "new_cases": 9, "discharged": 6},
+      {"date": "Feb 13", "new_cases": 5, "discharged": 3},
+      {"date": "Feb 14", "new_cases": 5, "discharged": 3},
+      {"date": "Feb 15", "new_cases": 4, "discharged": 1},
+      {"date": "Feb 16", "new_cases": 4, "discharged": 2},
+      {"date": "Feb 17", "new_cases": 5, "discharged": 1},
+      {"date": "Feb 18", "new_cases": 5, "discharged": 2},
+      {"date": "Feb 19", "new_cases": 2, "discharged": 2},
+      {"date": "Feb 20", "new_cases": 3, "discharged": 10},
+      {"date": "Mar 1", "new_cases": 5, "discharged": 1},
+      {"date": "Mar 2", "new_cases": 5, "discharged": 2},
+      {"date": "Mar 3", "new_cases": 2, "discharged": 2},
+      {"date": "Mar 4", "new_cases": 4, "discharged": 2},
+      {"date": "Mar 5", "new_cases": 4, "discharged": 0},
+      {"date": "Mar 6", "new_cases": 8, "discharged": 1},
+      {"date": "Mar 7", "new_cases": 8, "discharged": 3},
+      {"date": "Mar 8", "new_cases": 10, "discharged": 3},
+      {"date": "Mar 9", "new_cases": 9, "discharged": 1},
+      {"date": "Mar 10", "new_cases": 6, "discharged": 1},
+      {"date": "Mar 11", "new_cases": 3, "discharged": 0},
+      {"date": "Mar 12", "new_cases": 3, "discharged": 1},
+      {"date": "Mar 13", "new_cases": 13, "discharged": 9},
+      {"date": "Mar 14", "new_cases": 13, "discharged": 8}
+    ]
+  },
+  "transform": [
+    {"fold": ["new_cases", "discharged"], "as": ["category", "count"]}
+  ],
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "ordinal",
+      "title": "Date",
+      "axis": {"labelAngle": 45},
+      "sort": [
+        "Jan 23", "Jan 24", "Jan 25", "Jan 26", "Jan 27", "Jan 28", "Jan 29", "Jan 30", "Jan 31",
+        "Feb 1", "Feb 2", "Feb 3", "Feb 4", "Feb 5", "Feb 6", "Feb 7", "Feb 8", "Feb 9", "Feb 10", 
+        "Feb 11", "Feb 12", "Feb 13", "Feb 14", "Feb 15", "Feb 16", "Feb 17", "Feb 18", "Feb 19", "Feb 20",
+        "Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", 
+        "Mar 12", "Mar 13", "Mar 14"
+      ]
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "Count",
+      "scale": {"domain": [0, 15]}
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "scale": {
+        "domain": ["new_cases", "discharged"],
+        "range": ["#DC143C", "#6495ED"]
+      },
+      "title": "Legend"
+    },
+    "xOffset": {"field": "category"}
+  },
+  "mark": {"type": "bar", "width": 8},
+  "config": {
+    "axisX": {
+      "labelFontSize": 12
+    },
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 10
+    }
+  }
+}
