@@ -36,7 +36,7 @@
       "type": "nominal",
       "title": "Country",
       "axis": {
-        "labelAngle": -45,  // Rotate labels for better visibility
+        "labelAngle": -45,  
         "labelFontSize": 10
       }
     },
