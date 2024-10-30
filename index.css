@@ -1,83 +1,127 @@
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-  background-color: #fff;
+  background-color: #F0F0F0;
+  font-family: 'Lora', serif;
+  color: #333333;
   margin: 0 auto;
   max-width: 800px;
-  padding-top: 80px;
+  line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #333;
-  margin: 24px 0 16px;
-  font-weight: 600;
-}
-
-.big {
-  font-size: 2.5em;
+h1 {
+  font-size: 1.8em;
+  color: #5C4033;
+  text-align: center;
+  margin-top: 20px;
 }
 
 h2 {
-  font-size: 1.75em;
-}
-
-.small {
-  font-size: 1.25em;
+  font-size: 1.5em;
+  color: #5C4033;
+  font-style: italic;
+  text-align: center;
 }
 
 p {
+  font-size: 1rem;
+  color: #5C4033;
+  text-align: center;
   margin-bottom: 1em;
-  font-weight: 300;
 }
+
+.chart-description p {
+  font-family: 'Lora', serif;
+}
+
+#chartGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Remove top-banner styling */
 
 section {
   margin-bottom: 2.5em;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: 5px;
-}
-
-a {
-  color: #065f46;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-.top-banner {
-  background-color: #001f3f;
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
+figure {
+  margin: 1em 0;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
   position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.hamburger div {
   width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Menu Styles */
+.menu {
+  position: fixed;
   top: 0;
-  left: 0;
-  z-index: 1000;
+  right: -300px; /* Start off-screen */
+  height: 100vh;
+  width: 300px;
+  background-color: #ffffff;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s ease-in-out;
+  z-index: 900; /* Below hamburger but above content */
 }
 
-.top-banner li {
-  display: inline;
-  margin-right: 20px;
-  list-style: none;
+.menu.open {
+  right: 0; /* Slide in when open */
 }
 
-.top-banner a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
+.menu a {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 20px 0;
   font-weight: bold;
+  letter-spacing: 0.5rem;
+  color: #0D0C1D;
 }
 
-.top-banner a:hover {
-  text-decoration: underline;
+.menu a:hover {
+  color: #065f46;
+}
+figure {
+  width: 100%; /* Ensures the figure takes the full width of its container */
+  max-width: 700px; /* Adjust this to control chart width */
+  height: 400px; /* Set a fixed height */
+  margin: 0 auto; /* Centers the figure within the section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
