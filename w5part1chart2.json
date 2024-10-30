@@ -9,8 +9,8 @@
     "anchor": "middle",
     "color": "black"
       },
-  "width": 800,
-  "height": 800,
+  "width": 400,
+  "height": 400,
   "data": {
     "values": [
       {"date": "Jan 23", "category": "New Cases", "count": 1},
