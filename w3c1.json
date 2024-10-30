@@ -8,6 +8,8 @@
     "anchor": "start",
     "color": "black"
   },
+  "height":400,
+  "width": 400,
   "data": {
     "values": [
       {"Ethnicity": "Bangladeshi", "Percentage": 0.7},
