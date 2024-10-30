@@ -14,8 +14,8 @@
       "type": "csv"
     }
   },
-  "height": 300,
-  "width": 500,
+  "height": 400,
+  "width": 400,
   "mark": {
     "type": "bar",
     "color": "#27AE60"
