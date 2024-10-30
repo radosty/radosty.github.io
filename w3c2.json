@@ -8,6 +8,8 @@
     "anchor": "start",
     "color": "black"
   },
+  "height": 400,
+  "width": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/ethicity%20of%20school%20children.csv",
     "format": {
