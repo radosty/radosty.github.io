@@ -6,9 +6,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Sets background color, font, text color, 
-        ensures content exrends to the edge of the browser, ensures layout
-        is uneffected, aligns text within the body co tenter */
         body {
             background-color: #ffffff;
             font-family: 'Lora', serif;
@@ -18,8 +15,6 @@
             text-align: center;
         }
 
-        /* Black box section, sets the color to black, text to white
-        section is 80% of the viewpoint heiight, centers the elements*/
         .hero {
             background-color: #000;
             color: #fff;
@@ -29,29 +24,23 @@
             justify-content: center;
             text-align: center;
         }
-             /* (welcome to my website)
-             sets hero font, size, removes any default margin
-             sets text color, bold font */
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5em;
             margin: 0;
             color: #fff;
             font-weight: 700;
-            text-align: center;
         }
-              /* (explore my journey...) */
+
         .hero p {
             font-size: 1.2em;
             max-width: 600px;
             margin-top: 20px;
             line-height: 1.5;
             color: #d3d3d3;
-            text-align: center;
         }
 
-        /* the 3 boxes sets tge padding, text style, 
-        centers text content, hover transition*/
         .featured-projects {
             display: flex;
             justify-content: space-around;
@@ -65,52 +54,78 @@
             width: 30%;
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease; 
         }
 
         .featured-project h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6em;
-            color: #000;
-            margin-bottom: 10px;
+            font-size: 1.6em; 
+            color: #000; 
+            margin-bottom: 10px; 
+        }
+
+        .featured-project a {
+            text-decoration: none; 
+            color: #000; 
         }
 
         .featured-project p {
-            font-size: 1em;
-            color: #333;
+            font-size: 1em; 
+            color: #333; 
         }
 
         .featured-project:hover {
-            transform: scale(1.05);
+            transform: scale(1.05); 
         }
 
-        /* About Me Section style */
         .about {
-            padding: 40px 20px;
-            text-align: center;
-            background-color: #f7f7f7;
-        }
+             padding: 40px 20px; 
+             text-align: center; 
+             background-color: #f7f7f7; 
+         }
+ 
+         .about h2 {
+             font-family: 'Playfair Display', serif; 
+             font-size: 2.5em; 
+             margin-bottom: 20px; 
+             color: #000; 
+         }
+ 
+         .about p {
+             max-width: 800px; 
+             margin: 0 auto; 
+             line-height: 1.8; 
+             font-size: 1.1em; 
+             color: #333; 
+         }
 
-        .about h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #000;
-        }
+         .image-carousel {
+             position: relative;
+             width: 300px;
+             height: 200px;
+             margin: 40px auto; 
+             overflow: hidden;
+         }
 
-        .about p {
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-            font-size: 1.1em;
-            color: #333;
-        }
+         .carousel-image {
+             position: absolute; 
+             top: 50%; 
+             left: 50%; 
+             transform: translate(-50%, -50%); 
+             width: 90%; 
+             height: 90%; 
+             object-fit: cover; 
+             opacity: 0; 
+             transition: opacity 0.3s ease-in-out; 
+         }
 
+         .carousel-image.active { 
+             opacity: 1; 
+         }
     </style>
 </head>
 
 <body>
-     <!-- Menu bar -->
     <button class="hamburger" id="hamburger">
         <div></div>
         <div></div>
@@ -125,49 +140,73 @@
         <a href="https://github.com/radosty">GitHub</a>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div>
-            <h1>Welcome to My Portfolio</h1>
-            <p>Explore my journey through data science, economics, and technology, showcasing my projects and achievements.</p>
-        </div>
+       <div>
+           <h1>Welcome to My Portfolio</h1>
+           <p>Explore my journey through data science, economics, and technology, showcasing my projects and achievements.</p>
+       </div>
     </section>
 
-         <!-- Featured projects -->
+    <!-- Image Carousel -->
+    <div class="image-carousel">
+       <img src="bbf06929764e3a5dc0c50fb1bd877636.jpg" alt="Project 1" class="carousel-image">
+       <img src="d4873211c9b59fd0e26c784e42f38665.jpg" alt="Project 2" class="carousel-image">
+       <img src="ef86cfbac3952cbfdaacb66e8ca3b685.gif" alt="Project 3" class="carousel-image">
+       <img src="985e49c12ec60da01166673a89411326.gif" alt="Project 4" class="carousel-image">
+       <img src="b319e566ff00097215d01f40a48013da.jpg" alt="Project 5" class="carousel-image">
+       <img src="images.png" alt="Project 6" class="carousel-image">
+       <img src="1ec172dfa23c88f4411ba4ed58af0396.jpg" alt="Project 7" class="carousel-image">
+       <img src="5d2b075bce8f49c3c9122f2f2d928d8f.jpg" alt="Project 8" class="carousel-image">
+    </div>
+
+    <!-- Featured projects -->
     <section class="featured-projects">
-        <div class="featured-project">
-            <h2>Data Science Portfolio</h2>
-            <p>Explore my data visualizations, analyses, and techniques, demonstrating my skills in data science.</p>
-        </div>
-        <div class="featured-project">
-            <h2>Fintech Project</h2>
-            <p>Dive into my in-depth exploration of fintech, focusing on insights into the industry and technology.</p>
-        </div>
-        <div class="featured-project">
-            <h2>Research Insights</h2>
-            <p>My research and data collection projects offer a view into economic trends and policy implications.</p>
-        </div>
+       <div class="featured-project">
+           <h2><a href="portfolio.html">Data Science Portfolio</a></h2> <!-- Link to portfolio -->
+           <p>Explore my data visualizations and analyses from ten coding challenges, showcasing my skills in data science.</p>
+       </div>
+       <div class="featured-project">
+           <h2><a href="project.html">Fintech Project</a></h2> <!-- Link to project -->
+           <p>Examine the socioeconomic impact of fintech and whether it is fulfilling its promise or falling short.</p>
+       </div>
+       <div class="featured-project">
+           <h2>Research Insights</h2>
+           <p>My research and data collection projects offer a view into economic trends and policy implications.</p>
+       </div>
     </section>
 
     <!-- About Me Section -->
     <section class="about">
-        <h2>About Me</h2>
-        <p>Hello! I’m Radost Yosifova, an aspiring data scientist and economist. I’m passionate about leveraging data to derive insights that impact decision-making and enhance our understanding of the world.</p>
+       <h2>About Me</h2>
+       <p>Hello! I’m Radost Yosifova, an aspiring data scientist and economist. I’m passionate about leveraging data to derive insights that impact decision-making and enhance our understanding of the world.</p>
     </section>
 
+    <!-- JavaScript for image carousel -->
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const menu = document.getElementById('menu');
+       const images = document.querySelectorAll('.carousel-image');
+       let currentIndex = 0;
 
-        hamburger.addEventListener('click', () => {
-            menu.classList.toggle('open');
-        });
+       function changeImage() {
+           images[currentIndex].classList.remove('active');
+           currentIndex = (currentIndex + 1) % images.length;
+           images[currentIndex].classList.add('active');
+       }
 
-        document.addEventListener('click', (event) => {
-            if (!menu.contains(event.target) && !hamburger.contains(event.target) && menu.classList.contains('open')) {
-                menu.classList.remove('open');
-            }
-        });
-    </script>
+       images[0].classList.add('active');
+       setInterval(changeImage, 2000); // Change image every 2 seconds
+
+       const hamburger = document.getElementById('hamburger');
+       const menu = document.getElementById('menu');
+
+       hamburger.addEventListener('click', () => {
+           menu.classList.toggle('open');
+       });
+
+       document.addEventListener('click', (event) => {
+           if (!menu.contains(event.target) && !hamburger.contains(event.target) && menu.classList.contains('open')) {
+               menu.classList.remove('open');
+           }
+       });
+   </script>
 </body>
 </html>
