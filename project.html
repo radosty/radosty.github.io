@@ -1,109 +1,166 @@
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
-
 <!DOCTYPE html>
-<html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
-
-<head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
-
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
+<html lang="en">
+<head>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <title>Radost Yosifova's Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
-
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <title>Radost Yosifova's Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
-
 
     <style>
         body {
-            background-color: #F0F0F0;
+            background-color: #ffffff;
             font-family: 'Lora', serif;
-            color: white; /* Adjust link color for visibility */
-              }
-        h1,h2,h3 {
-            font-family:'Lora', serif;
-            color: #5C4033;
-            font-style: italic
-            }
+            color: #000;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-family: 'Playfair Display', serif;
+            color: #000;
+            margin-top: 40px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .project-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            padding: 10px 0;
+        }
+
+        .project-info p {
+            margin: 0;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .content {
+            margin-top: 40px;
+            text-align: left;
+        }
 
         p {
-            color: #5C4033; /* Walnut color for text */
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 20px;
         }
 
-        .chart-description p {
-            font-family: 'Lora', serif;
-        }
-
-        #chartGrid {
-            display: flex;
-        }
-                }
-        top-banner {
-            background-color: #001f3f;
-            display: flex;
-            justify-content: flex-end;
-            padding: 10px;
+        .hamburger {
             position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .hamburger div {
             width: 100%;
+            height: 2px;
+            background-color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .menu {
+            position: fixed;
             top: 0;
-            left: 0;
-            z-index: 1000;
+            right: -300px;
+            height: 100vh;
+            width: 300px;
+            background-color: #ffffff;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.3s ease-in-out;
         }
 
-        .top-banner li {
-            display: inline;
-            margin-right: 20px;
-            list-style: none;
+        .menu.open {
+            right: 0;
         }
 
-        .top-banner a {
-            color: white;
-            text-decoration: none;
+        .menu a {
             font-size: 1rem;
+            font-family: 'Lora', serif;
+            text-transform: uppercase;
+            padding: 10px 0;
             font-weight: bold;
+            letter-spacing: 0.1rem;
+            color: #000;
+            text-decoration: none;
         }
 
-        .top-banner a:hover {
+        .menu a:hover {
             text-decoration: underline;
         }
-
-        /* No content overlap with banner */
-        body {
-            padding-top: 80px;
-        }
-        
     </style>
 </head>
 
-<body> 
-    <div class="top-banner">
-        <li><a href="https://www.linkedin.com/in/radost-yosifova-11683b272/">LinkedIn</a></li>
-        <li><a href="https://github.com/radosty">GitHub</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="project.html">Project</a></li>
+<body>
+    <button class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="project.html">Project</a>
+        <a href="https://www.linkedin.com/in/radost-yosifova-11683b272/">LinkedIn</a>
+        <a href="https://github.com/radosty">GitHub</a>
+    </nav>
+
+    <div class="container">
+        <h1>Fintech's Promise: Delivering on Ambitious Socioeconomic Impact or Falling Short?</h1>
+
+        <div class="project-info">
+            <p>By Radost Yosifova</p>
+            <p>6 December 2024</p>
+        </div>
+
+        <div class="content">
+            <p>This project explores the socioeconomic impact of fintech, examining whether it's fulfilling its promise or falling short of expectations.</p>
+            <!-- Add more content here -->
+        </div>
     </div>
-        
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Fintech's Promise: Delivering on Ambitious Socioeconomic Impact or Falling Short?
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && !hamburger.contains(event.target) && menu.classList.contains('open')) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
