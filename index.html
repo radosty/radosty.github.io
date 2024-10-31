@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
 <head>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <title>Radost Yosifova's Website</title>
+    <title>Radost Yosifova's Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Basic body styling */
+        /* Sets background color, font, text color, 
+        ensures content exrends to the edge of the browser, ensures layout
+        is uneffected, aligns text within the body co tenter */
         body {
             background-color: #ffffff;
             font-family: 'Lora', serif;
@@ -16,7 +18,8 @@
             text-align: center;
         }
 
-        /* Hero Section */
+        /* Black box section, sets the color to black, text to white
+        section is 80% of the viewpoint heiight, centers the elements*/
         .hero {
             background-color: #000;
             color: #fff;
@@ -26,24 +29,29 @@
             justify-content: center;
             text-align: center;
         }
-
+             /* (welcome to my website)
+             sets hero font, size, removes any default margin
+             sets text color, bold font */
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5em;
             margin: 0;
             color: #fff;
             font-weight: 700;
+            text-align: center;
         }
-
+              /* (explore my journey...) */
         .hero p {
             font-size: 1.2em;
             max-width: 600px;
             margin-top: 20px;
             line-height: 1.5;
             color: #d3d3d3;
+            text-align: center;
         }
 
-        /* Featured Projects Section */
+        /* the 3 boxes sets tge padding, text style, 
+        centers text content, hover transition*/
         .featured-projects {
             display: flex;
             justify-content: space-around;
@@ -76,7 +84,7 @@
             transform: scale(1.05);
         }
 
-        /* About Section */
+        /* About Me Section style */
         .about {
             padding: 40px 20px;
             text-align: center;
@@ -98,21 +106,17 @@
             color: #333;
         }
 
-        /* Hamburger and Menu Styles - unchanged */
-        /* Insert previous Hamburger and Menu Styles here */
-
     </style>
 </head>
 
 <body>
-    <!-- Hamburger Menu Button -->
+     <!-- Menu bar -->
     <button class="hamburger" id="hamburger">
         <div></div>
         <div></div>
         <div></div>
     </button>
 
-    <!-- Hamburger Menu -->
     <nav class="menu" id="menu">
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
@@ -124,20 +128,20 @@
     <!-- Hero Section -->
     <section class="hero">
         <div>
-            <h1>Welcome to My Website</h1>
-            <p>Explore my journey through data science, economics, and technology, showcasing my projects and tasks.</p>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Explore my journey through data science, economics, and technology, showcasing my projects and achievements.</p>
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
+         <!-- Featured projects -->
     <section class="featured-projects">
         <div class="featured-project">
             <h2>Data Science Portfolio</h2>
-            <p>Explore my data visualisations, analyses, and techniques, demonstrating my skills in data science.</p>
+            <p>Explore my data visualizations, analyses, and techniques, demonstrating my skills in data science.</p>
         </div>
         <div class="featured-project">
             <h2>Fintech Project</h2>
-            <p>Dive into my in-depth evaluation of fintech, focusing on insights into the industry and technology.</p>
+            <p>Dive into my in-depth exploration of fintech, focusing on insights into the industry and technology.</p>
         </div>
         <div class="featured-project">
             <h2>Research Insights</h2>
@@ -145,10 +149,10 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Me Section -->
     <section class="about">
         <h2>About Me</h2>
-        <p>Hello! I’m Radost Yosifova, an aspiring BSc Economics student. I’m passionate about leveraging data to derive insights that impact decision-making and enhance our understanding of the world.</p>
+        <p>Hello! I’m Radost Yosifova, an aspiring data scientist and economist. I’m passionate about leveraging data to derive insights that impact decision-making and enhance our understanding of the world.</p>
     </section>
 
     <script>
