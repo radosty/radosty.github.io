@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <style>
-        body {
+         body {
             background-color: #ffffff;
             font-family: 'Lora', serif;
             color: #000;
@@ -61,60 +61,38 @@
             margin-bottom: 20px;
         }
 
-        .hamburger {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 30px;
-            height: 30px;
-            background: transparent;
+        section {
             border: none;
-            cursor: pointer;
-            z-index: 10;
+            margin-top: 40px;
+            padding-top: 0;
         }
 
-        .hamburger div {
-            width: 100%;
-            height: 2px;
-            background-color: #000;
-            transition: all 0.3s ease;
-        }
-
-        .menu {
-            position: fixed;
-            top: 0;
-            right: -300px;
-            height: 100vh;
-            width: 300px;
-            background-color: #ffffff;
-            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: right 0.3s ease-in-out;
-        }
-
-        .menu.open {
-            right: 0;
-        }
-
-        .menu a {
-            font-size: 1rem;
+        .chart-description {
+            margin-top: 0;
+            padding-top: 0;
             font-family: 'Lora', serif;
-            text-transform: uppercase;
-            padding: 10px 0;
-            font-weight: bold;
-            letter-spacing: 0.1rem;
             color: #000;
-            text-decoration: none;
         }
 
-        .menu a:hover {
-            text-decoration: underline;
+        .chart-description h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .chart-description p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        #Location1 {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -144,11 +122,18 @@
 
         <div class="content">
             <p>This project explores the socioeconomic impact of fintech, examining whether it's fulfilling its promise or falling short of expectations.</p>
-            
         </div>
     </div>
-
+    <section>
+        <div class="chart-description">
+            <h2>Bar Chart: Regional Adoption of Digital Payment Systems</h2>
+            <p>This visualisation illustrates trends in adoption rates around Europe.</p>
+            <figure id="Location1"></figure>
+        </div>
+    </section>
     <script>
+        let digital_adoption_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/digitalpaymentadoption.json";
+        vegaEmbed('#Location1', digital_adoption_spec);
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
 
