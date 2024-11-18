@@ -10,8 +10,8 @@
     "color": "black"
   },
 
-  "width": 400,
-  "height": 400,
+  "width": 500,
+  "height": 500,
   "data": {
     "values": [
       {"date": "Jan 23", "new_cases": 1, "discharged": 0},
