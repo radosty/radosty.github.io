@@ -9,9 +9,8 @@
     "anchor": "middle",
     "color": "black"
   },
-
-  "width": 500,
-  "height": 500,
+  "width": 700,
+  "height": 400,
   "data": {
     "values": [
       {"date": "Jan 23", "new_cases": 1, "discharged": 0},
@@ -59,7 +58,7 @@
       {"date": "Mar 14", "new_cases": 13, "discharged": 8}
     ]
   },
-  "transform": [
+ "transform": [
     {"fold": ["new_cases", "discharged"], "as": ["category", "count"]}
   ],
   "encoding": {
@@ -67,40 +66,47 @@
       "field": "date",
       "type": "ordinal",
       "title": "Date",
-      "axis": {"labelAngle": 45},
-      "sort": [
-        "Jan 23", "Jan 24", "Jan 25", "Jan 26", "Jan 27", "Jan 28", "Jan 29", "Jan 30", "Jan 31",
-        "Feb 1", "Feb 2", "Feb 3", "Feb 4", "Feb 5", "Feb 6", "Feb 7", "Feb 8", "Feb 9", "Feb 10", 
-        "Feb 11", "Feb 12", "Feb 13", "Feb 14", "Feb 15", "Feb 16", "Feb 17", "Feb 18", "Feb 19", "Feb 20",
-        "Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", 
-        "Mar 12", "Mar 13", "Mar 14"
-      ]
+      "axis": {"labelAngle": 45}
     },
     "y": {
       "field": "count",
       "type": "quantitative",
       "title": "Count",
-      "scale": {"domain": [0, 15]}
+      "scale": {"domain": [0, 15]},
+      "axis": {"tickCount": 4}
     },
     "color": {
       "field": "category",
       "type": "nominal",
       "scale": {
         "domain": ["new_cases", "discharged"],
-        "range": ["#DC143C", "#6495ED"]
+        "range": ["#DC143C", "#000080"]  // Crimson red and Navy blue
       },
       "title": "Legend"
     },
     "xOffset": {"field": "category"}
   },
-  "mark": {"type": "bar", "width": 8},
-  "config": {
-    "axisX": {
-      "labelFontSize": 12
+  "layer": [
+    {
+      "mark": {"type": "bar", "width": 8}
     },
-    "legend": {
-      "titleFontSize": 12,
-      "labelFontSize": 10
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -5
+      },
+      "encoding": {
+        "text": {"field": "count", "type": "quantitative"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "grid": true,
+      "gridColor": "#DCDCDC"
     }
   }
 }
