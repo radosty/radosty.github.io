@@ -9,167 +9,106 @@
     "anchor": "middle",
     "color": "black"
       },
-  "width": 400,
+  "width": 700,
   "height": 400,
-  "data": {
+    "data": {
     "values": [
-      {"date": "Jan 23", "category": "New Cases", "count": 1},
-      {"date": "Jan 23", "category": "Discharged", "count": 0},
-      {"date": "Jan 24", "category": "New Cases", "count": 2},
-      {"date": "Jan 24", "category": "Discharged", "count": 0},
-      {"date": "Jan 25", "category": "New Cases", "count": 1},
-      {"date": "Jan 25", "category": "Discharged", "count": 0},
-      {"date": "Jan 26", "category": "New Cases", "count": 1},
-      {"date": "Jan 26", "category": "Discharged", "count": 0},
-      {"date": "Jan 27", "category": "New Cases", "count": 2},
-      {"date": "Jan 27", "category": "Discharged", "count": 0},
-      {"date": "Jan 28", "category": "New Cases", "count": 2},
-      {"date": "Jan 28", "category": "Discharged", "count": 0},
-      {"date": "Jan 29", "category": "New Cases", "count": 3},
-      {"date": "Jan 29", "category": "Discharged", "count": 0},
-      {"date": "Jan 30", "category": "New Cases", "count": 3},
-      {"date": "Jan 30", "category": "Discharged", "count": 0},
-      {"date": "Jan 31", "category": "New Cases", "count": 3},
-      {"date": "Jan 31", "category": "Discharged", "count": 0},
-      {"date": "Feb 1", "category": "New Cases", "count": 4},
-      {"date": "Feb 1", "category": "Discharged", "count": 1},
-      {"date": "Feb 2", "category": "New Cases", "count": 2},
-      {"date": "Feb 2", "category": "Discharged", "count": 1},
-      {"date": "Feb 3", "category": "New Cases", "count": 3},
-      {"date": "Feb 3", "category": "Discharged", "count": 1},
-      {"date": "Feb 4", "category": "New Cases", "count": 6},
-      {"date": "Feb 4", "category": "Discharged", "count": 1},
-      {"date": "Feb 5", "category": "New Cases", "count": 4},
-      {"date": "Feb 5", "category": "Discharged", "count": 1},
-      {"date": "Feb 6", "category": "New Cases", "count": 3},
-      {"date": "Feb 6", "category": "Discharged", "count": 0},
-      {"date": "Feb 7", "category": "New Cases", "count": 7},
-      {"date": "Feb 7", "category": "Discharged", "count": 3},
-      {"date": "Feb 8", "category": "New Cases", "count": 3},
-      {"date": "Feb 8", "category": "Discharged", "count": 0},
-      {"date": "Feb 9", "category": "New Cases", "count": 3},
-      {"date": "Feb 9", "category": "Discharged", "count": 3},
-      {"date": "Feb 10", "category": "New Cases", "count": 6},
-      {"date": "Feb 10", "category": "Discharged", "count": 2},
-      {"date": "Feb 11", "category": "New Cases", "count": 8},
-      {"date": "Feb 11", "category": "Discharged", "count": 2},
-      {"date": "Feb 12", "category": "New Cases", "count": 9},
-      {"date": "Feb 12", "category": "Discharged", "count": 6},
-      {"date": "Feb 13", "category": "New Cases", "count": 5},
-      {"date": "Feb 13", "category": "Discharged", "count": 3},
-      {"date": "Feb 14", "category": "New Cases", "count": 5},
-      {"date": "Feb 14", "category": "Discharged", "count": 3},
-      {"date": "Feb 15", "category": "New Cases", "count": 4},
-      {"date": "Feb 15", "category": "Discharged", "count": 1},
-      {"date": "Feb 16", "category": "New Cases", "count": 4},
-      {"date": "Feb 16", "category": "Discharged", "count": 2},
-      {"date": "Feb 17", "category": "New Cases", "count": 5},
-      {"date": "Feb 17", "category": "Discharged", "count": 1},
-      {"date": "Feb 18", "category": "New Cases", "count": 5},
-      {"date": "Feb 18", "category": "Discharged", "count": 2},
-      {"date": "Feb 19", "category": "New Cases", "count": 2},
-      {"date": "Feb 19", "category": "Discharged", "count": 2},
-      {"date": "Feb 20", "category": "New Cases", "count": 3},
-      {"date": "Feb 20", "category": "Discharged", "count": 10},
-      {"date": "Feb 21", "category": "New Cases", "count": 0},
-      {"date": "Feb 21", "category": "Discharged", "count": 0},
-      {"date": "Feb 22", "category": "New Cases", "count": 0},
-      {"date": "Feb 22", "category": "Discharged", "count": 0},
-      {"date": "Feb 23", "category": "New Cases", "count": 0},
-      {"date": "Feb 23", "category": "Discharged", "count": 0},
-      {"date": "Feb 24", "category": "New Cases", "count": 0},
-      {"date": "Feb 24", "category": "Discharged", "count": 0},
-      {"date": "Feb 25", "category": "New Cases", "count": 0},
-      {"date": "Feb 25", "category": "Discharged", "count": 0},
-      {"date": "Feb 26", "category": "New Cases", "count": 0},
-      {"date": "Feb 26", "category": "Discharged", "count": 0},
-      {"date": "Feb 27", "category": "New Cases", "count": 0},
-      {"date": "Feb 27", "category": "Discharged", "count": 0},
-      {"date": "Feb 28", "category": "New Cases", "count": 0},
-      {"date": "Feb 28", "category": "Discharged", "count": 0},
-      {"date": "Mar 1", "category": "New Cases", "count": 6},
-      {"date": "Mar 1", "category": "Discharged", "count": 2},
-      {"date": "Mar 2", "category": "New Cases", "count": 5},
-      {"date": "Mar 2", "category": "Discharged", "count": 2},
-      {"date": "Mar 3", "category": "New Cases", "count": 2},
-      {"date": "Mar 3", "category": "Discharged", "count": 2},
-      {"date": "Mar 4", "category": "New Cases", "count": 4},
-      {"date": "Mar 4", "category": "Discharged", "count": 2},
-      {"date": "Mar 5", "category": "New Cases", "count": 4},
-      {"date": "Mar 5", "category": "Discharged", "count": 0},
-      {"date": "Mar 6", "category": "New Cases", "count": 8},
-      {"date": "Mar 6", "category": "Discharged", "count": 1},
-      {"date": "Mar 7", "category": "New Cases", "count": 8},
-      {"date": "Mar 7", "category": "Discharged", "count": 3},
-      {"date": "Mar 8", "category": "New Cases", "count": 10},
-      {"date": "Mar 8", "category": "Discharged", "count": 3},
-      {"date": "Mar 9", "category": "New Cases", "count": 9},
-      {"date": "Mar 9", "category": "Discharged", "count": 1},
-      {"date": "Mar 10", "category": "New Cases", "count": 6},
-      {"date": "Mar 10", "category": "Discharged", "count": 1},
-      {"date": "Mar 11", "category": "New Cases", "count": 3},
-      {"date": "Mar 11", "category": "Discharged", "count": 0},
-      {"date": "Mar 12", "category": "New Cases", "count": 3},
-      {"date": "Mar 12", "category": "Discharged", "count": 1},
-      {"date": "Mar 13", "category": "New Cases", "count": 13},
-      {"date": "Mar 13", "category": "Discharged", "count": 9},
-      {"date": "Mar 14", "category": "New Cases", "count": 13},
-      {"date": "Mar 14", "category": "Discharged", "count": 8}
+      {"date": "Jan 23", "new_cases": 1, "discharged": 0},
+      {"date": "Jan 24", "new_cases": 2, "discharged": 0},
+      {"date": "Jan 25", "new_cases": 1, "discharged": 0},
+      {"date": "Jan 26", "new_cases": 1, "discharged": 0},
+      {"date": "Jan 27", "new_cases": 2, "discharged": 0},
+      {"date": "Jan 28", "new_cases": 2, "discharged": 0},
+      {"date": "Jan 29", "new_cases": 3, "discharged": 0},
+      {"date": "Jan 30", "new_cases": 3, "discharged": 0},
+      {"date": "Jan 31", "new_cases": 3, "discharged": 0},
+      {"date": "Feb 1", "new_cases": 4, "discharged": 1},
+      {"date": "Feb 2", "new_cases": 2, "discharged": 1},
+      {"date": "Feb 3", "new_cases": 3, "discharged": 0},
+      {"date": "Feb 4", "new_cases": 6, "discharged": 1},
+      {"date": "Feb 5", "new_cases": 4, "discharged": 1},
+      {"date": "Feb 6", "new_cases": 3, "discharged": 0},
+      {"date": "Feb 7", "new_cases": 7, "discharged": 3},
+      {"date": "Feb 8", "new_cases": 3, "discharged": 0},
+      {"date": "Feb 9", "new_cases": 3, "discharged": 3},
+      {"date": "Feb 10", "new_cases": 6, "discharged": 2},
+      {"date": "Feb 11", "new_cases": 8, "discharged": 2},
+      {"date": "Feb 12", "new_cases": 9, "discharged": 6},
+      {"date": "Feb 13", "new_cases": 5, "discharged": 3},
+      {"date": "Feb 14", "new_cases": 5, "discharged": 3},
+      {"date": "Feb 15", "new_cases": 4, "discharged": 1},
+      {"date": "Feb 16", "new_cases": 4, "discharged": 2},
+      {"date": "Feb 17", "new_cases": 5, "discharged": 1},
+      {"date": "Feb 18", "new_cases": 5, "discharged": 2},
+      {"date": "Feb 19", "new_cases": 2, "discharged": 2},
+      {"date": "Feb 20", "new_cases": 3, "discharged": 10},
+      {"date": "Mar 1", "new_cases": 5, "discharged": 1},
+      {"date": "Mar 2", "new_cases": 5, "discharged": 2},
+      {"date": "Mar 3", "new_cases": 2, "discharged": 2},
+      {"date": "Mar 4", "new_cases": 4, "discharged": 2},
+      {"date": "Mar 5", "new_cases": 4, "discharged": 0},
+      {"date": "Mar 6", "new_cases": 8, "discharged": 1},
+      {"date": "Mar 7", "new_cases": 8, "discharged": 3},
+      {"date": "Mar 8", "new_cases": 10, "discharged": 3},
+      {"date": "Mar 9", "new_cases": 9, "discharged": 1},
+      {"date": "Mar 10", "new_cases": 6, "discharged": 1},
+      {"date": "Mar 11", "new_cases": 3, "discharged": 0},
+      {"date": "Mar 12", "new_cases": 3, "discharged": 1},
+      {"date": "Mar 13", "new_cases": 13, "discharged": 9},
+      {"date": "Mar 14", "new_cases": 13, "discharged": 8}
     ]
+ },
+ "transform": [
+    {"fold": ["new_cases", "discharged"], "as": ["category", "count"]}
+  ],
+"encoding": {
+  "x": {
+    "field": "date",
+    "type": "temporal",
+    "title": "Date",
+    "axis": {
+      "format": "%b %d", 
+      "tickCount": 7
+    }
   },
-  "facet": {
-    "column": {"field": "category", "type": "nominal", "title": null}
-  },
-  "spec": {
-    "layer": [
-      {
-        "mark": {"type": "bar", "width": 10, "opacity": 0.2},
-        "encoding": {
-          "x": {
-            "field": "date",
-            "type": "temporal",
-            "title": "Date",
-            "axis": {
-              "labelAngle": 45,
-              "tickCount": 6
-            }
-          },
-          "y": {
-            "field": "count",
-            "type": "quantitative",
-            "title": "Count",
-            "scale": {"domain": [0, 15]}
-          },
-          "color": {
-            "field": "category",
-            "scale": {
-              "domain": ["New Cases", "Discharged"],
-              "range": ["#A93226", "#1A5276 "]
-            }
-          }
-        }
+  "y": {
+    "field": "count",
+    "type": "quantitative",
+    "title": "Count",
+    "scale": {"domain": [0, 15]},
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "scale": {
+        "domain": ["new_cases", "discharged"],
+        "range": ["#DC130C", "#000080"]  
       },
-      {
-        "mark": {"type": "line", "strokeWidth": 3},
-        "encoding": {
-          "x": {
-            "field": "date",
-            "type": "temporal",
-            "axis": {
-              "labelAngle": 45,
-              "tickCount": 6
-            }
-          },
-          "y": {"field": "count", "type": "quantitative"},
-          "color": {
-            "field": "category",
-            "scale": {
-              "domain": ["New Cases", "Discharged"],
-              "range": ["#A93226", "#1A5276"]
-            }
-          }
-        }
+      "title": "Legend"
+    },
+    "xOffset": {"field": "category"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "line", "width": 8}
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -5
+      },
+      "encoding": {
+        "text": {"field": "count", "type": "quantitative"}
       }
-    ]
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "grid": true,
+      "gridColor": "#42313141"
+    }
   }
 }
