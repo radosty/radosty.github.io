@@ -1,13 +1,12 @@
 id,state,state_abv,turnout
-01,Alabama,AL,58.89%
-02,Alaska,AK,56.94%
-04,Arizona,AZ,63.60%
-05,Arkansas,AR,53.48%
-06,California,CA,62.48%
-08,Colorado,CO,73.12%
-09,Connecticut,CT,67.12%
+1,Alabama,AL,58.89%
+2,Alaska,AK,56.94%
+4,Arizona,AZ,63.60%
+5,Arkansas,AR,53.48%
+6,California,CA,62.48%
+8,Colorado,CO,73.12%
+9,Connecticut,CT,67.12%
 10,Delaware,DE,67.02%
-11,District of Columbia,DC,63.59%
 12,Florida,FL,66.71%
 13,Georgia,GA,68.26%
 15,Hawaii,HI,50.27%
