@@ -188,6 +188,15 @@
           <div id="gdp-charts"></div>
         </div>
       </section>
+    <section>
+          <div class="chart-description">
+            <h2>Task 7, 8 and 10 Option 2: Interactive Heatmap showing US Presidential Election Turnout 2020 and 2024.</h2>
+            <p>Base map:</p>
+            <figure id="Location11"></figure>
+            <p>Interactive Heatmap:</p>
+            <figure id="Location12"></figure>
+        </div>
+    </section>
       <script>
         window.onload = function() {
        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
@@ -210,6 +219,10 @@
             vegaEmbed('#Location9', figure_9_spec)
        let figure_10_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/week5part2chart.json";
             vegaEmbed('#Location10', figure_10_spec)
+      let figure_11_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/basic_map.json";
+            vegaEmbed('#Location11', figure_11_spec)
+      let figure_12_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/usinteractivemap.json";
+            vegaEmbed('#Location12', figure_12_spec)
         };
         const gdpCharts = [
   { id: 'chart-US', url: 'https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/gdp_United_States.json', subtitle: 'United States' },
