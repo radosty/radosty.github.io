@@ -1,40 +1,55 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "US Base Map",
-    "anchor":"start"
-  },
-  "width": 400,
-  "height": 300,
-  "data": {
-    "url": "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/datasets/advanced/us_states.json",
-    "format": {"type": "topojson", "feature": "states"}
-  },
-  "projection": {
-    "type": "albersUsa"
-  },
-  "mark": {
-    "type": "geoshape",
-    "fill": "rgb(136,5,67)",
-    "stroke": "rgb(15,15,15)",
-    "strokeWidth": 0.4
-  },
-  "transform": [
-    {
-      "lookup": "id",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/states.csv"
-        },
-        "key": "id",
-        "fields": ["name"]
-      }
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "US Base Map",
+        "subtitle": "Layout Source: Economics Observatory",
+        "anchor": "start",
+        "fontSize": 24,
+        "font": "Times",
+        "color": "#333333"
+    },
+    "width": 700,
+    "height": 500,
+    "data": {
+        "url": "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/datasets/advanced/us_states.json",
+        "format": {
+            "type": "topojson",
+            "feature": "states"
+        }
+    },
+    "projection": {
+        "type": "albersUsa"
+    },
+    "mark": {
+        "type": "geoshape",
+        "fill": "#d3d3d3",
+        "stroke": "rgb(15,15,15)",
+        "strokeWidth": 0.4
+    },
+    "transform": [
+        {
+            "lookup": "id",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/states.csv"
+                },
+                "key": "id",
+                "fields": [
+                    "name"
+                ]
+            }
+        }
+    ],
+    "encoding": {
+        "tooltip": [
+            {
+                "field": "name",
+                "title": "State"
+            },
+            {
+                "field": "id",
+                "title": "ID"
+            }
+        ]
     }
-  ],
-  "encoding": {
-    "tooltip": [
-      {"field": "name", "title": "State"},
-      {"field": "id", "title": "ID"}
-    ]
-  }
 }
