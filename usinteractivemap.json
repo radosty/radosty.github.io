@@ -1,135 +1,122 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "US Presidential Election Turnout",
-        "subtitle": "Sources: UF Election Lab and Wikipedia",
-        "anchor": "middle",
-        "fontSize": 24,
-        "font": "Times",
-        "color": "#333333",
-        "subtitleFontSize": 16,
-        "subtitleFont": "Times",
-        "subtitleColor": "#666666",
-        "offset": 20
-    },
-    "width": 700,
-    "height": 500,
-    "params": [
-        {
-            "name": "view",
-            "value": "2024",
-            "bind": {
-                "input": "select",
-                "options": [
-                    "2024",
-                    "2020"
-                ],
-                "labels": [
-                    "2024 Turnout",
-                    "2020 Turnout"
-                ],
-                "name": "Select Map: "
-            }
-        }
-    ],
-    "data": {
-        "url": "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/datasets/advanced/us_states.json",
-        "format": {
-            "type": "topojson",
-            "feature": "states"
-        }
-    },
-    "transform": [
-        {
-            "lookup": "id",
-            "from": {
-                "data": {
-                    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/turnouts.csv"
-                },
-                "key": "id",
-                "fields": [
-                    "state",
-                    "turnout_2024",
-                    "turnout_2020",
-                    "change"
-                ]
-            }
-        },
-        {
-            "calculate": "if(view == '2024', parseFloat(replace(datum.turnout_2024, '%', '')), if(view == '2020', parseFloat(replace(datum.turnout_2020, '%', '')), parseFloat(replace(datum.change, '%', ''))))",
-            "as": "turnout_value"
-        }
-    ],
-    "projection": {
-        "type": "albersUsa"
-    },
-    "mark": {
-        "type": "geoshape",
-        "stroke": "#fff",
-        "strokeWidth": 0.6,
-        "strokeOpacity": 0.9
-    },
-    "encoding": {
-        "color": {
-            "field": "turnout_value",
-            "type": "quantitative",
-            "scale": {
-                "domain": [
-                    50,
-                    80
-                ],
-                "range": [
-                    "#e0f3db",
-                    "#43a2ca"
-                ],
-                "nice": true
-            },
-            "title": "Turnout (%)",
-            "legend": {
-                "orient": "bottom-right",
-                "direction": "horizontal",
-                "gradientLength": 300,
-                "titleFontSize": 14,
-                "labelFontSize": 12,
-                "titleFont": "Roboto, sans-serif",
-                "labelFont": "Roboto, sans-serif"
-            }
-        },
-        "tooltip": [
-            {
-                "field": "state",
-                "type": "nominal",
-                "title": "State"
-            },
-            {
-                "field": "turnout_value",
-                "type": "quantitative",
-                "title": "Turnout",
-                "format": ".1f"
-            },
-            {
-                "field": "change",
-                "type": "quantitative",
-                "title": "Change (%)",
-                "format": "+.2f"
-            }
-        ]
-    },
-    "config": {
-        "view": {
-            "stroke": null
-        },
-        "axis": {
-            "grid": false
-        },
-        "legend": {
-            "titleFontSize": 14,
-            "labelFontSize": 12,
-            "titleFont": "Roboto, sans-serif",
-            "labelFont": "Roboto, sans-serif"
-        },
-        "text": {
-            "font": "Roboto, sans-serif"
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "US Presidential Election Turnout",
+    "subtitle": "Sources: UF Election Lab and Wikipedia",
+    "anchor": "middle",
+    "fontSize": 24,
+    "font": "Times",
+    "color": "#333333",
+    "subtitleFontSize": 16,
+    "subtitleFont": "Times",
+    "subtitleColor": "#666666",
+    "offset": 20
+  },
+  "width": 700,
+  "height": 500,
+  "params": [
+    {
+      "name": "view",
+      "value": "2024",
+      "bind": {
+        "input": "select",
+        "options": ["2024", "2020"],
+        "labels": ["2024 Turnout", "2020 Turnout"],
+        "name": "Select Map: "
+      }
     }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/datasets/advanced/us_states.json",
+    "format": {
+      "type": "topojson",
+      "feature": "states"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "id",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/turnouts.csv"
+        },
+        "key": "id",
+        "fields": ["state", "turnout_2024", "turnout_2020", "change"]
+      }
+    },
+    {
+      "calculate": "if(view == '2024', parseFloat(replace(datum.turnout_2024, '%', '')), if(view == '2020', parseFloat(replace(datum.turnout_2020, '%', '')), parseFloat(replace(datum.change, '%', ''))))",
+      "as": "turnout_value"
+    },
+    {
+      "calculate": "parseFloat(replace(datum.change, '%', ''))",
+      "as": "change_value"
+    }
+  ],
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#fff",
+    "strokeWidth": 0.6,
+    "strokeOpacity": 0.9
+  },
+  "encoding": {
+    "color": {
+      "field": "turnout_value",
+      "type": "quantitative",
+      "scale": {
+        "domain": [50, 80],
+        "range": ["#e0f3db", "#43a2ca"],
+        "nice": true
+      },
+      "title": "Turnout (%)",
+      "legend": {
+        "orient": "bottom-right",
+        "direction": "horizontal",
+        "gradientLength": 300,
+        "titleFontSize": 14,
+        "labelFontSize": 12,
+        "titleFont": "Roboto, sans-serif",
+        "labelFont": "Roboto, sans-serif"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "turnout_value",
+        "type": "quantitative",
+        "title": "Turnout",
+        "format": ".1f"
+      },
+      {
+        "field": "change_value",
+        "type": "quantitative",
+        "title": "Change (%)",
+        "format": "+.2f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": false
+    },
+    "legend": {
+      "titleFontSize": 14,
+      "labelFontSize": 12,
+      "titleFont": "Roboto, sans-serif",
+      "labelFont": "Roboto, sans-serif"
+    },
+    "text": {
+      "font": "Roboto, sans-serif"
+    }
+  }
 }
