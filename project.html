@@ -126,14 +126,21 @@
     </div>
     <section>
         <div class="chart-description">
-            <h2>Bar Chart: Regional Adoption of Digital Payment Systems</h2>
-            <p>This visualisation illustrates trends in adoption rates around Europe(Edit this).</p>
+            <h2>Visualisation 1: Adoption of Digital Payment Systems in Europe</h2>
             <figure id="Location1"></figure>
+        </div>
+    </section>
+    <section></section>
+        <div class="chart-description">
+            <h2>Visualisation 2: Fintechs Market Performace</h2>
+            <figure id="Location2"></figure>
         </div>
     </section>
     <script>
         let digital_adoption_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/digitalpaymentadoption.json";
         vegaEmbed('#Location1', digital_adoption_spec);
+        let stock_analysis = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/stock.json";
+        vegaEmbed('#Location2', stock_analysis);
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
 
@@ -149,3 +156,4 @@
     </script>
 </body>
 </html>
+
