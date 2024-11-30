@@ -1,0 +1,234 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Line charts showing Monthly Return (%) and Close Price for Fintech, NASDAQ, and S&P 500 for 2021.",
+    "background": "#f8fafc",
+    "padding": 5,
+    "width": 800,
+    "height": 600,
+    "title": {
+        "text": "Stock Performance Analysis",
+        "subtitle": [
+            "Monthly Return (%) and Close Price for Fintech, NASDAQ, and S&P 500",
+            "Data Source: Yahoo Finance API",
+            ""
+        ],
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 10,
+        "anchor": "start",
+        "color": "#1e3a8a",
+        "font": "Inter, sans-serif",
+        "subtitleFont": "Inter, sans-serif"
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/monthly_stock.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "timeParse(datum.Date, '%d/%m/%Y')",
+            "as": "ParsedDate"
+        },
+        {
+            "filter": "year(datum.ParsedDate) == 2021"
+        }
+    ],
+    "vconcat": [
+        {
+            "width": 800,
+            "height": 300,
+            "mark": {
+                "type": "line",
+                "point": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "ParsedDate",
+                    "type": "temporal",
+                    "title": "Date",
+                    "axis": {
+                        "labelAngle": 315,
+                        "labelAlign": "right",
+                        "labelBaseline": "top"
+                    }
+                },
+                "y": {
+                    "field": "Monthly Return (%)",
+                    "type": "quantitative",
+                    "title": "Monthly Return (%)"
+                },
+                "color": {
+                    "field": "Ticker",
+                    "type": "nominal",
+                    "title": "Stock Ticker",
+                    "scale": {
+                        "domain": [
+                            "Fintech",
+                            "NASDAQ",
+                            "S&P 500"
+                        ],
+                        "range": [
+                            "#1e40af",
+                            "#60a5fa",
+                            "#10b981"
+                        ]
+                    }
+                },
+                "opacity": {
+                    "condition": {
+                        "selection": "hover",
+                        "value": 1
+                    },
+                    "value": 0.2
+                },
+                "tooltip": [
+                    {
+                        "field": "ParsedDate",
+                        "type": "temporal",
+                        "title": "Date",
+                        "format": "%B %d, %Y"
+                    },
+                    {
+                        "field": "Ticker",
+                        "type": "nominal",
+                        "title": "Stock Ticker"
+                    },
+                    {
+                        "field": "Monthly Return (%)",
+                        "type": "quantitative",
+                        "title": "Monthly Return (%)",
+                        "format": ".2f"
+                    },
+                    {
+                        "field": "Close",
+                        "type": "quantitative",
+                        "title": "Close Price",
+                        "format": ".2f"
+                    }
+                ]
+            },
+            "selection": {
+                "brush": {
+                    "type": "interval",
+                    "encodings": [
+                        "x"
+                    ]
+                },
+                "hover": {
+                    "type": "single",
+                    "fields": [
+                        "Ticker"
+                    ],
+                    "on": "click"
+                }
+            }
+        },
+        {
+            "width": 800,
+            "height": 300,
+            "mark": {
+                "type": "line",
+                "point": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "ParsedDate",
+                    "type": "temporal",
+                    "title": "Date",
+                    "axis": {
+                        "labelAngle": 315,
+                        "labelAlign": "right",
+                        "labelBaseline": "top"
+                    }
+                },
+                "y": {
+                    "field": "Close",
+                    "type": "quantitative",
+                    "title": "Close Price"
+                },
+                "color": {
+                    "field": "Ticker",
+                    "type": "nominal",
+                    "title": "Stock Ticker",
+                    "scale": {
+                        "domain": [
+                            "Fintech",
+                            "NASDAQ",
+                            "S&P 500"
+                        ],
+                        "range": [
+                            "#1e40af",
+                            "#60a5fa",
+                            "#10b981"
+                        ]
+                    }
+                },
+                "opacity": {
+                    "condition": {
+                        "selection": "hover",
+                        "value": 1
+                    },
+                    "value": 0.2
+                },
+                "tooltip": [
+                    {
+                        "field": "ParsedDate",
+                        "type": "temporal",
+                        "title": "Date",
+                        "format": "%B %d, %Y"
+                    },
+                    {
+                        "field": "Ticker",
+                        "type": "nominal",
+                        "title": "Stock Ticker"
+                    },
+                    {
+                        "field": "Close",
+                        "type": "quantitative",
+                        "title": "Close Price",
+                        "format": ".2f"
+                    },
+                    {
+                        "field": "Monthly Return (%)",
+                        "type": "quantitative",
+                        "title": "Monthly Return (%)",
+                        "format": ".2f"
+                    }
+                ]
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "selection": "brush"
+                    }
+                }
+            ]
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#4b5563",
+            "titleColor": "#1e3a8a"
+        },
+        "legend": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif"
+        },
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            },
+            "group-title": {
+                "font": "Inter, sans-serif",
+                "fontSize": 20,
+                "fontWeight": "bold"
+            }
+        },
+        "title": {
+            "subtitleFont": "Inter, sans-serif"
+        }
+    }
+}
