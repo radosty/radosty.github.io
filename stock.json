@@ -3,12 +3,12 @@
     "description": "Line charts showing Monthly Return (%) and Close Price for Fintech, NASDAQ, and S&P 500 for 2021.",
     "background": "#f8fafc",
     "padding": 5,
-    "width": 800,
-    "height": 600,
+    "width": 600,
+    "height": 400,
     "title": {
         "text": "Stock Performance Analysis",
         "subtitle": [
-            "Monthly Return (%) and Close Price for Fintech, NASDAQ, and S&P 500 in 2021",
+            "Monthly Return (%) and Close Price for Fintech, NASDAQ, and S&P 500",
             "Data Source: Yahoo Finance API",
             ""
         ],
@@ -36,8 +36,8 @@
     ],
     "vconcat": [
         {
-            "width": 800,
-            "height": 300,
+            "width": 600,
+            "height": 400,
             "mark": {
                 "type": "line",
                 "point": true
@@ -125,8 +125,8 @@
             }
         },
         {
-            "width": 800,
-            "height": 300,
+            "width": 600,
+            "height": 400,
             "mark": {
                 "type": "line",
                 "point": true
