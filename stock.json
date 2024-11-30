@@ -8,7 +8,7 @@
     "title": {
         "text": "Stock Performance Analysis",
         "subtitle": [
-            "Monthly Return (%) and Close Price for Fintech, NASDAQ, and S&P 500",
+            "Monthly Return (%) and Close Price for Fintech, NASDAQ, and S&P 500 for 2021",
             "Data Source: Yahoo Finance API",
             ""
         ],
