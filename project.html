@@ -141,13 +141,21 @@
             <h2>Visualisation 3: Digital Payment Adoption's Impact on GDP Per Capita: A Strong Positive Correlation </h2>
             <img src="scatterplot.png" alt="Original chart image" width="700" height="700">
         </div>
+    <section>
+        <div class="chart-description">
+            <h2>Visualisation 4: How GDP and Digital Access Shape Inclusion</h2>
+            <figure id="Location3"></figure>
+        </div>
     </section>
+    
     
     <script>
         let digital_adoption_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/digitalpaymentadoption.json";
         vegaEmbed('#Location1', digital_adoption_spec);
         let stock_analysis = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/stock.json";
         vegaEmbed('#Location2', stock_analysis);
+        lest bubble_chart = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/fintechbubblechart.json";
+        vegaEmbed('#Location3', bubble_chart);
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
 
