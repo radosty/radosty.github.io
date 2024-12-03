@@ -98,7 +98,7 @@
                 ]
             },
             "legend": {
-                "title": "Fintech Inclusion Level",
+                "title": "Fintech Inclusion Index",
                 "titleFont": "Inter, sans-serif",
                 "labelFont": "Inter, sans-serif",
                 "orient": "right"
