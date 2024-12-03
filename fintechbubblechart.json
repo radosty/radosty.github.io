@@ -1,0 +1,171 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Digital Access and GDP Per Capita (PPP)",
+        "subtitle": [
+            "Tracking Digital Infrastructure and Fintech Inclusion | 2021",
+            "Source: World Bank API and Fintech Inclusion Index is calculated in Colab using 6 indicators from Findex World Bank Report 2021"
+        ],
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 10,
+        "anchor": "start",
+        "color": "#1e3a8a",
+        "font": "Inter, sans-serif",
+        "subtitleFont": "Inter, sans-serif"
+    },
+    "width": 800,
+    "height": 500,
+    "params": [
+        {
+            "name": "grid",
+            "select": "interval",
+            "bind": "scales"
+        },
+        {
+            "name": "hover",
+            "select": {
+                "type": "point",
+                "on": "mouseover",
+                "nearest": true
+            }
+        }
+    ],
+    "data": {
+        "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/fintechinclusionindexgdpppinternet.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "mark": {
+        "type": "circle",
+        "opacity": 0.8,
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+    },
+    "encoding": {
+        "x": {
+            "field": "GDP PPP",
+            "type": "quantitative",
+            "scale": {
+                "type": "log",
+                "domain": [
+                    4000,
+                    120000
+                ]
+            },
+            "title": "GDP Per Capita (PPP)",
+            "axis": {
+                "format": "$,d",
+                "grid": true,
+                "gridOpacity": 0.2,
+                "labelFont": "Inter, sans-serif",
+                "titleFont": "Inter, sans-serif",
+                "labelColor": "#4b5563",
+                "titleColor": "#1e3a8a"
+            }
+        },
+        "y": {
+            "field": "Internet Penetration %",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    25,
+                    100
+                ]
+            },
+            "title": "Internet Penetration (%)",
+            "axis": {
+                "grid": true,
+                "gridOpacity": 0.2,
+                "tickCount": 6,
+                "labelFont": "Inter, sans-serif",
+                "titleFont": "Inter, sans-serif",
+                "labelColor": "#4b5563",
+                "titleColor": "#1e3a8a"
+            }
+        },
+        "color": {
+            "field": "Fintech Inclusion Index",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    -9,
+                    -4
+                ],
+                "range": [
+                    "#bfdbfe",
+                    "#1e40af"
+                ]
+            },
+            "legend": {
+                "title": "Fintech Inclusion Level",
+                "titleFont": "Inter, sans-serif",
+                "labelFont": "Inter, sans-serif",
+                "orient": "right"
+            }
+        },
+        "size": {
+            "field": "Fintech Inclusion Index",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    -9,
+                    -4
+                ],
+                "range": [
+                    100,
+                    2000
+                ]
+            },
+            "legend": null
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "type": "nominal"
+            },
+            {
+                "field": "GDP PPP",
+                "type": "quantitative",
+                "format": "$,d",
+                "title": "GDP Per Capita"
+            },
+            {
+                "field": "Internet Penetration %",
+                "type": "quantitative",
+                "format": ".1f",
+                "title": "Internet Access (%)"
+            },
+            {
+                "field": "Fintech Inclusion Index",
+                "type": "quantitative",
+                "title": "Fintech Inclusion Index"
+            }
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#4b5563",
+            "titleColor": "#1e3a8a"
+        },
+        "legend": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif"
+        },
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            },
+            "group-title": {
+                "font": "Inter, sans-serif",
+                "fontSize": 20,
+                "fontWeight": "bold"
+            }
+        }
+    }
+}
