@@ -190,13 +190,31 @@
       </section>
     <section>
           <div class="chart-description">
-            <h2>Task 7, 8 and 10 Option 2: Interactive Heatmap showing US Presidential Election Turnout 2020 and 2024.</h2>
+            <h2>Task 7: Interactive Heatmap showing US Presidential Election Turnout 2020 and 2024</h2>
             <p>Base map:</p>
             <figure id="Location11"></figure>
             <p>Interactive Heatmap:</p>
             <figure id="Location12"></figure>
         </div>
     </section>
+    <section>
+        <div class="chart-description">
+          <h2>Task 8: Advanced Analytics</h2>
+          <p>Bubble Chart:</p>
+          <figure id="Location13"></figure>
+          <p>Regression Scatter Plot:</p>
+          <img src="scatterplot.png" alt="Original chart image" width="700" height="700">
+      </div>
+  </section>
+  <section>
+    <div class="chart-description">
+      <h2>Task 10: Option 2 Interactive Charts</h2>
+      <p>Interactive Heat Map:</p>
+      <figure id="Location14"></figure>
+      <p>Interactive Bar Chart:</p>
+      <figure id="Location15"></figure>
+  </div>
+</section>
       <script>
         window.onload = function() {
        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
@@ -223,6 +241,13 @@
             vegaEmbed('#Location11', figure_11_spec)
       let figure_12_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/usinteractivemap.json";
             vegaEmbed('#Location12', figure_12_spec)
+      let figure_13_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/fintechbubblechart.json";
+            vegaEmbed('#Location13', figure_13_spec)
+       let figure_14_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/usinteractivemap.json";
+            vegaEmbed('#Location14', figure_14_spec)
+            let figure_15_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/digitalpaymentadoption.json";
+            vegaEmbed('#Location15', figure_15_spec)
+        
         };
         const gdpCharts = [
   { id: 'chart-US', url: 'https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/gdp_United_States.json', subtitle: 'United States' },
@@ -307,7 +332,6 @@ gdpCharts.forEach((chart, index) => {
         hamburger.addEventListener('click', () => {
             menu.classList.toggle('open');
         });
-   ß
         document.addEventListener('click', (event) => {
             if (!menu.contains(event.target) && !hamburger.contains(event.target) && menu.classList.contains('open')) {
                 menu.classList.remove('open');
@@ -318,4 +342,6 @@ gdpCharts.forEach((chart, index) => {
    </body>
        
    </html>
+   
+
    
