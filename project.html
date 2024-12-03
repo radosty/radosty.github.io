@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <style>
-         body {
+        body {
             background-color: #ffffff;
             font-family: 'Lora', serif;
             color: #000;
@@ -94,6 +94,51 @@
             height: auto;
             margin-top: 20px;
         }
+
+        /* Tabs styling */
+        .tabs {
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        .tab-buttons button {
+            flex: 1;
+            padding: 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #f9f9f9;
+            font-family: 'Lora', serif;
+            font-size: 1em;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab-buttons button:hover {
+            background-color: #eaeaea;
+        }
+
+        .tab-buttons button.active {
+            background-color: #ffffff;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            padding: 20px;
+            display: none;
+            background-color: #ffffff;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 
@@ -123,7 +168,33 @@
         <div class="content">
             <p>This project explores the socioeconomic impact of fintech, examining whether it's fulfilling its promise or falling short of expectations.</p>
         </div>
+
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-link active" onclick="openTab(event, 'aims')">Aims</button>
+                <button class="tab-link" onclick="openTab(event, 'conclusions')">Conclusions</button>
+                <button class="tab-link" onclick="openTab(event, 'challenges')">Challenges</button>
+                <button class="tab-link" onclick="openTab(event, 'data')">Data</button>
+            </div>
+            <div id="aims" class="tab-content active">
+                <h3>Aims</h3>
+                <p>Write Aims </p>
+            </div>
+            <div id="conclusions" class="tab-content">
+                <h3>Conclusions</h3>
+                <p>Write Conclusions</p>
+            </div>
+            <div id="challenges" class="tab-content">
+                <h3>Challenges</h3>
+                <p>Describe Challenges with finding data etc...</p>
+            </div>
+            <div id="data" class="tab-content">
+                <h3>Data</h3>
+                <p>Describe data sources and cleaning...</p>
+            </div>
+        </div>
     </div>
+    
     <section>
         <div class="chart-description">
             <h2>Visualisation 1: Adoption of Digital Payment Systems in Europe</h2>
@@ -132,7 +203,7 @@
     </section>
     <section>
         <div class="chart-description">
-            <h2>Visualisation 2: Fintechs Market Performace</h2>
+            <h2>Visualisation 2: Fintechs Market Performance</h2>
             <figure id="Location2"></figure>
         </div>
     </section>
@@ -141,19 +212,32 @@
             <h2>Visualisation 3: Digital Payment Adoption's Impact on GDP Per Capita: A Strong Positive Correlation </h2>
             <img src="scatterplot.png" alt="Original chart image" width="700" height="700">
         </div>
+    </section>
     <section>
         <div class="chart-description">
             <h2>Visualisation 4: How GDP and Digital Access Shape Inclusion</h2>
             <figure id="Location3"></figure>
         </div>
     </section>
-    
-    
+
     <script>
+        function openTab(event, tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const tabLinks = document.querySelectorAll('.tab-link');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabLinks.forEach(link => link.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
         let digital_adoption_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/digitalpaymentadoption.json";
         vegaEmbed('#Location1', digital_adoption_spec);
+
         let stock_analysis = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/stock.json";
         vegaEmbed('#Location2', stock_analysis);
+
         let bubble_chart = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/fintechbubblechart.json";
         vegaEmbed('#Location3', bubble_chart);
         const hamburger = document.getElementById('hamburger');
@@ -171,3 +255,6 @@
     </script>
 </body>
 </html>
+
+
+
