@@ -219,6 +219,13 @@
             <figure id="Location3"></figure>
         </div>
     </section>
+    <section>
+        <div class="chart-description">
+            <h2>Visualisation 4: How digitally secure really is Online Banking?</h2>
+            <figure id="Location4"></figure>
+        </div>
+    </section>
+    
 
     <script>
         function openTab(event, tabId) {
@@ -240,6 +247,9 @@
 
         let bubble_chart = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/fintechbubblechart.json";
         vegaEmbed('#Location3', bubble_chart);
+        let double_axis = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/doubleaxischart.json";
+        vegaEmbed('#Location4', double_axis);
+        
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
 
@@ -255,6 +265,3 @@
     </script>
 </body>
 </html>
-
-
-
