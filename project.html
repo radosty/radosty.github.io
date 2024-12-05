@@ -225,7 +225,12 @@
             <figure id="Location4"></figure>
         </div>
     </section>
-    
+    <section>
+        <div class="chart-description">
+            <h2>Visualisation 6: Peer-to-Peer and Crowdlending: Trends and Their Role During COVID-19</h2>
+            <figure id="Location5"></figure>
+        </div>
+    </section>
 
     <script>
         function openTab(event, tabId) {
@@ -249,6 +254,8 @@
         vegaEmbed('#Location3', bubble_chart);
         let double_axis = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/doubleaxischart.json";
         vegaEmbed('#Location4', double_axis);
+        let area_loans = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/loansfintech.json";
+        vegaEmbed('#Location5', area_loans);
         
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
@@ -265,3 +272,4 @@
     </script>
 </body>
 </html>
+
