@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#f8fafc",
+  "padding": 5,
+  "width": 600,
+  "height": 400,
+  "title": {
+    "text": "Peer-to-Peer and Crowdlending Trends",
+    "anchor": "start",
+    "color": "#1e3a8a",
+    "subtitle": ["Data Source: Statista"],
+    "subtitleFontSize": 12,
+    "subtitleFontStyle": "italic"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/cleaned_loansEurope-2.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "fold": ["Peer to Peer % of Total Lending", "Crowdlending % of Total Lending"],
+      "as": ["Lending Type", "Percentage"]
+    },
+    {
+      "calculate": "datum['Lending Type'] === 'Peer to Peer % of Total Lending' ? 'Peer-to-Peer' : 'Crowdlending'",
+      "as": "Lending Type"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "Percentage",
+      "type": "quantitative",
+      "title": "Percentage of Total Lending (%)",
+      "stack": "zero"
+    },
+    "color": {
+      "field": "Lending Type",
+      "type": "nominal",
+      "title": "Lending Type",
+      "scale": {"range": ["#bfdbfe", "#1e40af"]}
+    },
+    "tooltip": [
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "Lending Type", "type": "nominal", "title": "Lending Type"},
+      {"field": "Percentage", "type": "quantitative", "title": "Percentage"}
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelColor": "#4b5563",
+      "titleColor": "#1e3a8a"
+    },
+    "legend": {
+      "titleFontSize": 14,
+      "labelFontSize": 12
+    },
+    "style": {"cell": {"stroke": "transparent"}}
+  }
+}
