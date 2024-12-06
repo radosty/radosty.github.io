@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Time trend of Soft Continental Cheese price.",
+  "width": 400,
+  "height": 400,
+  "title": {
+    "text": "Soft Continental Cheese Price Trend Over Time",
+    "subtitle": "Source: Richard Davies Prices Data",
+    "fontSize": 18,
+    "subtitleFontSize": 14,
+    "anchor": "start",
+    "font": "Arial"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/cheeseprices-3.csv"
+  },
+  "mark": {
+    "type": "line",
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "year_month",
+      "type": "temporal",
+      "title": "Date",
+      "axis": {"format": "%Y-%m", "labelAngle": -45}
+    },
+    "y": {
+      "field": "Soft Continental Cheese",
+      "type": "quantitative",
+      "title": "Price (£/kg)",
+      "scale": {"domain": [0, 15]},
+      "axis": {"tickCount": 11}
+    },
+    "tooltip": [
+      {"field": "year_month", "type": "temporal", "title": "Date", "format": "%Y-%m"},
+      {"field": "Soft Continental Cheese", "type": "quantitative", "title": "Price (£/kg)"}
+    ]
+  }
+}
