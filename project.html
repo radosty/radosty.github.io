@@ -92,9 +92,9 @@ section {
 
 #Location1, #Location2, #Location3, #Location4, #Location5, #Location6 {
     width: 100%;
-    max-width: 700px; 
+    max-width: 700px; /* Ensures charts do not exceed section boundaries */
     height: auto;
-    margin: 0 auto; 
+    margin: 0 auto; /* Centers the charts */
 }
 
 /* Tabs styling */
@@ -149,7 +149,7 @@ section {
 
 .vogue-button {
     display: inline-block;
-    margin: 20px auto; 
+    margin: 20px auto; /* Centers the button and adds spacing */
     padding: 12px 20px;
     font-family: 'Playfair Display', serif;
     font-size: 16px;
@@ -272,10 +272,6 @@ section {
             <p>6 December 2024</p>
         </div>
 
-        <div class="content">
-            <p>This project explores the socioeconomic impact of fintech, examining whether it's fulfilling its promise or falling short of expectations.</p>
-        </div>
-
         <div class="tabs">
             <div class="tab-buttons">
                 <button class="tab-link active" onclick="openTab(event, 'aims')">Aims</button>
@@ -285,19 +281,19 @@ section {
             </div>
             <div id="aims" class="tab-content active">
                 <h3>Aims</h3>
-                <p>Write Aims </p>
+                <p>The project aims to evaluate the socioeconomic impact of Fintech in Europe, focusing on digital payments and financial inclusion. It seeks to identify relationships between Fintech investment, digital adoption, and economic indicators such as GDP PPP per capita. By creating a Fintech Inclusion Index and analysing user trends, the project addresses data limitations to uncover regional insights. The ultimate goal is to provide accessible, data-driven conclusions through carefully curated visualisations, offering meaningful perspectives on Fintech’s role in driving growth and inclusion. </p>
             </div>
             <div id="conclusions" class="tab-content">
                 <h3>Conclusions</h3>
-                <p>Write Conclusions</p>
+                <p>Internet penetration emerged as a crucial enabler for digital payments and financial inclusion, emphasising the importance of robust infrastructure (Visualisation 4). Security remains a significant challenge, with limited data on fraud beyond the UK revealing gaps in regional analysis and underscoring the need for Fintechs to prioritise security innovations (Visualisation 5). The analysis of Fintech performance during the 2021 crisis demonstrated resilience, with strong adoption trends (Visualisation 1) showcasing the sector's capacity to drive inclusion during economic turbulence. For instance, alternative lending increased as traditional lending declined, despite unstable stock performance (Visualisations 6, 2). Overall, the findings suggest that Fintechs are pivotal in fostering inclusion and growth but require enhanced data frameworks and infrastructure to fully realise their potential.</p>
             </div>
             <div id="challenges" class="tab-content">
                 <h3>Challenges</h3>
-                <p>Describe Challenges with finding data etc...</p>
+                <p>Data availability and formatting posed significant challenges throughout the project. The World Bank Findex Database, updated only every three years, restricted timely analysis. Fintech investment data for Europe was sparse, covering only a few countries, which required using stock performance as a proxy (Visualisation 2). The absence of a standardised Fintech Inclusion Index necessitated computing one using six parameters from the Findex Database, dealing with inconsistencies such as binary (0/1) and multi-level formats (e.g., 1=yes, 2=no, 3=not sure) (Visualisation 4). Limited fintech user data from 2018–2028 led to the prediction of GNI using statistical methods to ensure sufficient data points for analysis (Visualisation 7). Missing values in many datasets were addressed through statistical imputation using averages (Visualisation 2). Furthermore, the lack of data on online banking fraud across Europe narrowed the analysis to the UK (Visualisation 5), restricting regional insights.</p>
             </div>
             <div id="data" class="tab-content">
                 <h3>Data</h3>
-                <p>Describe data sources and cleaning...</p>
+                <p>The project relied on diverse data sources, including Statista, the World Bank Findex Database, the World Bank API, and the Yahoo API. World Bank sources required significant cleaning to ensure consistency and usability.  Missing values were addressed using statistical imputation, with averages calculated to fill gaps, particularly in stock performance data (Visualisation 2). Fintech investment data was manually refined to exclude incomplete periods, such as H1 2024, where GDP PPP per capita data was unavailable (Visualisation 3).These efforts ensured that the data was as accurate and comprehensive as possible despite its initial limitations.</p>
             </div>
         </div>
     </div>
