@@ -7,138 +7,245 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
     <style>
         body {
-            background-color: #ffffff;
-            font-family: 'Lora', serif;
-            color: #000;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+    background-color: #ffffff;
+    font-family: 'Lora', serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        h1 {
-            font-size: 2.5em;
-            font-family: 'Playfair Display', serif;
-            color: #000;
-            margin-top: 40px;
-            font-weight: 700;
-            line-height: 1.2;
-            text-align: left;
-        }
+h1 {
+    font-size: 2.5em;
+    font-family: 'Playfair Display', serif;
+    color: #000;
+    margin-top: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+}
 
-        .project-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-            border-top: 1px solid #000;
-            border-bottom: 1px solid #000;
-            padding: 10px 0;
-        }
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+}
 
-        .project-info p {
-            margin: 0;
-            font-size: 0.9em;
-            text-transform: uppercase;
-        }
+.project-info p {
+    margin: 0;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
 
-        .content {
-            margin-top: 40px;
-            text-align: left;
-        }
+.content {
+    margin-top: 40px;
+    text-align: left;
+}
 
-        p {
-            color: #000;
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
+p {
+    color: #000;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
 
-        section {
-            border: none;
-            margin-top: 40px;
-            padding-top: 0;
-        }
+section {
+    border: none;
+    margin-top: 40px;
+    padding-top: 0;
+}
 
-        .chart-description {
-            margin-top: 0;
-            padding-top: 0;
-            font-family: 'Lora', serif;
-            color: #000;
-        }
+.chart-description {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
 
-        .chart-description h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            font-weight: 600;
-            color: #000;
-            margin-bottom: 15px;
-        }
+.chart-description h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 15px;
+}
 
-        .chart-description p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #000;
-        }
+.chart-description p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #000;
+}
 
-        #Location1 {
-            width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
+#Location1, #Location2, #Location3, #Location4, #Location5, #Location6 {
+    width: 100%;
+    max-width: 700px; 
+    height: auto;
+    margin: 0 auto; 
+}
 
-        /* Tabs styling */
-        .tabs {
-            margin-top: 30px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-        }
+/* Tabs styling */
+.tabs {
+    margin-top: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-        .tab-buttons {
-            display: flex;
-            border-bottom: 1px solid #ddd;
-            background-color: #f9f9f9;
-        }
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
 
-        .tab-buttons button {
-            flex: 1;
-            padding: 15px;
-            cursor: pointer;
-            border: none;
-            background-color: #f9f9f9;
-            font-family: 'Lora', serif;
-            font-size: 1em;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
+.tab-buttons button {
+    flex: 1;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #f9f9f9;
+    font-family: 'Lora', serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
 
-        .tab-buttons button:hover {
-            background-color: #eaeaea;
-        }
+.tab-buttons button:hover {
+    background-color: #eaeaea;
+}
 
-        .tab-buttons button.active {
-            background-color: #ffffff;
-            font-weight: bold;
-        }
+.tab-buttons button.active {
+    background-color: #ffffff;
+    font-weight: bold;
+}
 
-        .tab-content {
-            padding: 20px;
-            display: none;
-            background-color: #ffffff;
-        }
+.tab-content {
+    padding: 20px;
+    display: none;
+    background-color: #ffffff;
+}
 
-        .tab-content.active {
-            display: block;
-        }
+.tab-content.active {
+    display: block;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.vogue-button {
+    display: inline-block;
+    margin: 20px auto; 
+    padding: 12px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #000000;
+    border: 2px solid #000000;
+    border-radius: 5px; 
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.vogue-button:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #000000;
+}
+
+.vogue-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.vogue-button:hover:after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+.vogue-button:active {
+    transform: scale(0.98);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger {
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 999;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu.open {
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Lora', serif;
+    font-size: 1.2em;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu a:hover {
+    background-color: #f9f9f9;
+}
+
     </style>
 </head>
 
@@ -199,39 +306,96 @@
         <div class="chart-description">
             <h2>Visualisation 1: Adoption of Digital Payment Systems in Europe</h2>
             <figure id="Location1"></figure>
+            <a
+            target="_blank" 
+            class="vogue-button">
+                Cleaned in excel
+            </a>
+        </div>
+    </div>
+</section>
         </div>
     </section>
     <section>
         <div class="chart-description">
             <h2>Visualisation 2: Fintechs Market Performance</h2>
             <figure id="Location2"></figure>
+            <a href="https://github.com/radosty/radosty.github.io/blob/4838b36d4e0dfb316eb414c09a6ce40ba9ef232f/visualisation2.ipynb" 
+            target="_blank" 
+            class="vogue-button">
+             Data Processing
+         </a>
+     </div>
+ </div>
         </div>
     </section>
     <section>
         <div class="chart-description">
             <h2>Visualisation 3: Digital Payment Adoption's Impact on GDP Per Capita: A Strong Positive Correlation </h2>
             <img src="scatterplot.png" alt="Original chart image" width="700" height="700">
+            <div class="button-container"></div>
+            <a href="https://github.com/radosty/radosty.github.io/blob/42d3f87594f26716775b8d350f84f69d1ce73f7f/regressiongdpppcanddigitalpaymentadoptioneurope.ipynb" 
+               target="_blank" 
+               class="vogue-button">
+                Data Processing
+            </a>
+        </div>
+    </div>
         </div>
     </section>
     <section>
         <div class="chart-description">
             <h2>Visualisation 4: How GDP and Digital Access Shape Inclusion</h2>
             <figure id="Location3"></figure>
+            <div class="button-container">
+                <a href="https://github.com/radosty/radosty.github.io/blob/9a58bd92180718bb7ccbf367745e1eb6400d5a84/visualistion4.ipynb" 
+                   target="_blank" 
+                   class="vogue-button">
+                    Data Processing
+                </a>
+            </div>
+        </div>
         </div>
     </section>
     <section>
         <div class="chart-description">
             <h2>Visualisation 5: How digitally secure really is Online Banking?</h2>
-            <figure id="Location4"></figure>
+            <figure id="Location4" class="graph"></figure>
+            <div class="button-container">
+                <a
+                target="_blank" 
+                class="vogue-button">
+                    Cleaned in excel
+                </a>
+            </div>
         </div>
     </section>
     <section>
         <div class="chart-description">
             <h2>Visualisation 6: Peer-to-Peer and Crowdlending: Trends and Their Role During COVID-19</h2>
             <figure id="Location5"></figure>
+            <div class="button-container"></div>
+                <a href="https://github.com/radosty/radosty.github.io/blob/8da74221fc044463c7b9c971fe603902aed61833/loanscleaningandmerging.ipynb" 
+                   target="_blank" 
+                   class="vogue-button">
+                    Data Processing
+                </a>
+            </div>
         </div>
     </section>
-
+    <section>
+        <div class="chart-description">
+            <h2>Visualisation 7: Fintech's Role in Closing Gaps Predictions</h2>
+            <figure id="Location6" class="graph"></figure>
+            <div class="button-container">
+                <a href="https://github.com/radosty/radosty.github.io/blob/8da74221fc044463c7b9c971fe603902aed61833/giniandfintechextractionandmerger.ipynb" 
+                   target="_blank" 
+                   class="vogue-button">
+                    Data Processing
+                </a>
+            </div>
+        </div>
+    </section>
     <script>
         function openTab(event, tabId) {
             const tabs = document.querySelectorAll('.tab-content');
@@ -256,7 +420,8 @@
         vegaEmbed('#Location4', double_axis);
         let area_loans = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/loansfintech.json";
         vegaEmbed('#Location5', area_loans);
-        
+        let fintech_gini = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/giniandfintech.json";
+        vegaEmbed('#Location6', fintech_gini);
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
 
@@ -272,4 +437,3 @@
     </script>
 </body>
 </html>
-
