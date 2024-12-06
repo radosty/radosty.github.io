@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Time trend of Parmesan cheese price.",
+  "width": 400,
+  "height": 400,
+  "title": {
+    "text": "Parmesan Cheese Price Trend Over Time",
+    "subtitle": "Source: Richard Davies Prices Data",
+    "fontSize": 18,
+    "subtitleFontSize": 14,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/cheeseprices-3.csv"
+  },
+  "mark": {
+    "type": "line",
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "year_month",
+      "type": "temporal",
+      "title": "Date",
+      "axis": {"format": "%Y-%m", "labelAngle": -45}
+    },
+    "y": {
+      "field": "Parmesan",
+      "type": "quantitative",
+      "title": "Price (£/kg)",
+      "scale": {"domain": [0, 40]},
+      "axis": {"tickCount": 8}
+    },
+    "tooltip": [
+      {"field": "year_month", "type": "temporal", "title": "Date", "format": "%Y-%m"},
+      {"field": "Parmesan", "type": "quantitative", "title": "Price (£/kg)"}
+    ]
+  }
+}
