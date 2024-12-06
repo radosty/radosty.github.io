@@ -1,128 +1,75 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "European Digital Payment Adoption Rates",
-        "anchor": "start",
-        "color": "#1e3a8a",
-        "subtitle": [
-            "Data Source: World Bank Global Findex Database"
-        ],
-        "subtitleFontSize": 12,
-        "subtitleFontStyle": "italic"
-    },
-    "data": {
-        "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/Cleaned_European_Digital_Payment.csv"
-    },
-    "params": [
-        {
-            "name": "yearFilter",
-            "value": 2014,
-            "bind": {
-                "input": "select",
-                "options": [
-                    2014,
-                    2017,
-                    2021
-                ],
-                "name": "Select Year"
-            }
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "European Digital Payment Adoption Rates",
+    "anchor": "start",
+    "color": "#1e3a8a",
+    "subtitle": [
+      "Tracking the rise of cashless societies in Europe",
+      "Data Source: World Bank Global Findex Database"
     ],
-    "transform": [
-        {
-            "filter": "datum.Year == yearFilter"
-        }
-    ],
-    "mark": {
-        "type": "bar",
-        "opacity": 0.8
-    },
-    "selection": {
-        "highlight": {
-            "type": "multi",
-            "fields": [
-                "Country"
-            ],
-            "on": "click"
-        }
-    },
-    "encoding": {
-        "x": {
-            "field": "Country",
-            "type": "nominal",
-            "axis": {
-                "labelAngle": -45,
-                "title": null
-            }
-        },
-        "y": {
-            "field": "Digital Payment Adoption (%)",
-            "type": "quantitative",
-            "axis": {
-                "grid": false,
-                "tickCount": 6,
-                "values": [
-                    0,
-                    20,
-                    40,
-                    60,
-                    80,
-                    100
-                ]
-            },
-            "scale": {
-                "domain": [
-                    0,
-                    100
-                ]
-            }
-        },
-        "color": {
-            "field": "Digital Payment Adoption (%)",
-            "type": "quantitative",
-            "scale": {
-                "domain": [
-                    0,
-                    100
-                ],
-                "range": [
-                    "#bfdbfe",
-                    "#1e40af"
-                ]
-            },
-            "legend": {
-                "title": "Adoption (%)"
-            }
-        },
-        "tooltip": [
-            {
-                "field": "Country",
-                "type": "nominal"
-            },
-            {
-                "field": "Digital Payment Adoption (%)",
-                "type": "quantitative",
-                "format": ".1f"
-            }
-        ],
-        "opacity": {
-            "condition": {
-                "selection": "highlight",
-                "value": 1
-            },
-            "value": 0.7
-        }
-    },
-    "width": 600,
-    "height": 400,
-    "config": {
-        "view": {
-            "stroke": "transparent"
-        },
-        "axis": {
-            "labelColor": "#4b5563",
-            "titleColor": "#1e3a8a"
-        },
-        "background": "#f8fafc"
+    "subtitleFontSize": 12,
+    "subtitleFontStyle": "italic"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/Cleaned_European_Digital_Payment.csv"
+  },
+  "params": [
+    {
+      "name": "yearFilter",
+      "value": 2014,
+      "bind": {
+        "input": "select",
+        "options": [2014, 2017, 2021],
+        "name": "Select Year"
+      }
     }
+  ],
+  "transform": [{"filter": "datum.Year == yearFilter"}],
+  "mark": {"type": "bar", "opacity": 0.8},
+  "selection": {
+    "highlight": {"type": "multi", "fields": ["Country"], "on": "click"}
+  },
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "axis": {"labelAngle": -45, "title": null}
+    },
+    "y": {
+      "field": "Digital Payment Adoption (%)",
+      "type": "quantitative",
+      "axis": {
+        "grid": false,
+        "tickCount": 6,
+        "values": [0, 20, 40, 60, 80, 100]
+      },
+      "scale": {"domain": [0, 100]}
+    },
+    "color": {
+      "field": "Digital Payment Adoption (%)",
+      "type": "quantitative",
+      "scale": {"domain": [0, 100], "range": ["#bfdbfe", "#1e40af"]},
+      "legend": {"title": "Adoption (%)"}
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {
+        "field": "Digital Payment Adoption (%)",
+        "type": "quantitative",
+        "format": ".1f"
+      }
+    ],
+    "opacity": {
+      "condition": {"selection": "highlight", "value": 1},
+      "value": 0.7
+    }
+  },
+  "width": 600,
+  "height": 400,
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"labelColor": "#4b5563", "titleColor": "#1e3a8a"},
+    "background": "#f8fafc"
+  }
 }
