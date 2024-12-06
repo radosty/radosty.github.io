@@ -285,7 +285,12 @@ section {
             </div>
             <div id="conclusions" class="tab-content">
                 <h3>Conclusions</h3>
-                <p>Internet penetration emerged as a crucial enabler for digital payments and financial inclusion, emphasising the importance of robust infrastructure (Visualisation 4). Security remains a significant challenge, with limited data on fraud beyond the UK revealing gaps in regional analysis and underscoring the need for Fintechs to prioritise security innovations (Visualisation 5). The analysis of Fintech performance during the 2021 crisis demonstrated resilience, with strong adoption trends (Visualisation 1) showcasing the sector's capacity to drive inclusion during economic turbulence. For instance, alternative lending increased as traditional lending declined, despite unstable stock performance (Visualisations 6, 2). Overall, the findings suggest that Fintechs are pivotal in fostering inclusion and growth but require enhanced data frameworks and infrastructure to fully realise their potential.</p>
+                <p>The European fintech sector has shown remarkable growth, with digital payments projected to increase by 116% between 2018-2028. Digital payment adoption across Europe grew from 68.84% in 2014 to 85.63% in 2021. Despite this growth, the impact on income inequality appears modest, with the average GINI coefficient with a slight decrease prediction from 31.03 in 2018 to 30.43 in 2028. Traditional lending remains dominant, with peer-to-peer lending peaking at only 2.7% of total lending. While Fintech has transformed the financial landscape, its promise of significant socioeconomic impact remains partially fulfilled. The sector must focus on developing products that address disparities and expand services to underserved populations to truly democratise finance across Europe.
+                    Moving forward, the European fintech sector must focus on:
+                    1. Developing products that specifically address socioeconomic disparities within and between European countries.
+                    2. Expanding services to underserved populations, particularly in Eastern and Southern Europe, to truly democratise finance across the continent.
+                    3. Collaborating with EU and national policymakers to create an environment that fosters both innovation and social impact.
+                    In conclusion, while fintech has made significant strides in transforming financial services across Europe, it has yet to fully deliver on its ambitious promise of widespread socioeconomic impact. The sector's potential remains vast, but realising it will require a concerted effort to align technological innovation with social progress, taking into account the diverse economic landscapes across European nations.</p>
             </div>
             <div id="challenges" class="tab-content">
                 <h3>Challenges</h3>
@@ -328,6 +333,8 @@ section {
     <section>
         <div class="chart-description">
             <h2>Visualisation 3: Digital Payment Adoption's Impact on GDP Per Capita: A Strong Positive Correlation </h2>
+            <p> In this analysis, I explored the relationship between digital payment adoption rates and economic indicators such as GDP per capita, inflation, and unemployment across 36 European countries between 2010-2023. Using data from the World Bank API and Statista, I merged the information on digital payment adoption with broader economic indicators, ensuring alignment by country and year. I filtered out incomplete rows and excluded less relevant columns, such as Fintech investment.
+                The primary focus was to model GDP per capita (PPP) as a function of digital payment adoption, inflation rates, and unemployment rates using Ridge Regression. After fitting the model, I predicted GDP per capita and evaluated the model’s performance with an R-squared score of 0.55, indicating the proportion of variance explained. Additionally, I calculated the correlation coefficient between digital payment adoption and GDP, yielding a value of 0.70, highlighting a significant relationship.</p>
             <img src="scatterplot.png" alt="Original chart image" width="700" height="700">
             <div class="button-container"></div>
             <a href="https://github.com/radosty/radosty.github.io/blob/42d3f87594f26716775b8d350f84f69d1ce73f7f/regressiongdpppcanddigitalpaymentadoptioneurope.ipynb" 
