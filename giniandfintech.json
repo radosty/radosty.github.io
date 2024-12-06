@@ -1,102 +1,144 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#f8fafc",
-  "width": 600,
-  "height": 400,
-  "title": {
-    "text": "Fintech Metrics and GINI Coefficient (Europe, 2018-2028)",
-    "anchor": "start",
-    "color": "#1e3a8a",
-    "subtitle": ["Data Source: World Bank API and Statista"],
-    "subtitleFontSize": 12,
-    "subtitleFontStyle": "italic"
-  },
-  "data": {
-    "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/fintechandgini5-2.csv",
-    "format": {"type": "csv"}
-  },
-  "params": [
-    {
-      "name": "metric",
-      "value": "Digital Payments",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Digital Payments",
-          "Digital Assets",
-          "Neobanking",
-          "Digital Investment",
-          "Total Users"
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "#f8fafc",
+    "width": 600,
+    "height": 400,
+    "title": {
+        "text": "Fintech Metrics and GINI Coefficient (Europe, 2018-2028)",
+        "anchor": "start",
+        "color": "#1e3a8a",
+        "subtitle": [
+            "Data Source: World Bank API and Statista",
+            "Tracking fintech's growth and its equity implications."
         ],
-        "name": "Choose Metric"
-      }
-    }
-  ],
-  "transform": [
-    {
-      "fold": [
-        "Digital Payments",
-        "Digital Assets",
-        "Neobanking",
-        "Digital Investment",
-        "Total Users"
-      ],
-      "as": ["Metric", "Value"]
+        "subtitleFontSize": 12,
+        "subtitleFontStyle": "italic"
     },
-    {
-      "filter": "datum.Metric == metric"
-    }
-  ],
-  "layer": [
-    {
-      "mark": {"type": "bar", "color": "#bfdbfe", "opacity": 0.8},
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "ordinal",
-          "title": "Year"
-        },
-        "y": {
-          "field": "Average Gini",
-          "type": "quantitative",
-          "title": "Average Gini (%)"
-        },
-        "tooltip": [
-          {"field": "Year", "type": "ordinal", "title": "Year"},
-          {"field": "Average Gini", "type": "quantitative", "title": "Average Gini"}
-        ]
-      }
+    "data": {
+        "url": "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/fintechandgini5-2.csv",
+        "format": {
+            "type": "csv"
+        }
     },
-    {
-      "mark": {"type": "line", "point": true, "color": "#1e40af"},
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "ordinal"
+    "params": [
+        {
+            "name": "metric",
+            "value": "Digital Payments",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "Digital Payments",
+                    "Digital Assets",
+                    "Neobanking",
+                    "Digital Investment",
+                    "Total Users"
+                ],
+                "name": "Choose Metric"
+            }
+        }
+    ],
+    "transform": [
+        {
+            "fold": [
+                "Digital Payments",
+                "Digital Assets",
+                "Neobanking",
+                "Digital Investment",
+                "Total Users"
+            ],
+            "as": [
+                "Metric",
+                "Value"
+            ]
         },
-        "y": {
-          "field": "Value",
-          "type": "quantitative",
-          "title": {"signal": "metric + ' (in millions)'"}
+        {
+            "filter": "datum.Metric == metric"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "color": "#bfdbfe",
+                "opacity": 0.8
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "title": "Year"
+                },
+                "y": {
+                    "field": "Average Gini",
+                    "type": "quantitative",
+                    "title": "Average Gini (%)"
+                },
+                "tooltip": [
+                    {
+                        "field": "Year",
+                        "type": "ordinal",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "Average Gini",
+                        "type": "quantitative",
+                        "title": "Average Gini"
+                    }
+                ]
+            }
         },
-        "tooltip": [
-          {"field": "Year", "type": "ordinal", "title": "Year"},
-          {"field": "Metric", "type": "nominal", "title": "Metric"},
-          {"field": "Value", "type": "quantitative", "title": "Value"}
-        ]
-      }
-    }
-  ],
-  "resolve": {
-    "scale": {"y": "independent"}
-  },
-  "config": {
-    "axis": {
-      "labelColor": "#4b5563",
-      "titleColor": "#1e3a8a"
+        {
+            "mark": {
+                "type": "line",
+                "point": true,
+                "color": "#1e40af"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative",
+                    "title": {
+                        "signal": "metric + ' (in millions)'"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Year",
+                        "type": "ordinal",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "Metric",
+                        "type": "nominal",
+                        "title": "Metric"
+                    },
+                    {
+                        "field": "Value",
+                        "type": "quantitative",
+                        "title": "Value"
+                    }
+                ]
+            }
+        }
+    ],
+    "resolve": {
+        "scale": {
+            "y": "independent"
+        }
     },
-    "style": {
-      "cell": {"stroke": "transparent"}
+    "config": {
+        "axis": {
+            "labelColor": "#4b5563",
+            "titleColor": "#1e3a8a"
+        },
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            }
+        }
     }
-  }
 }
