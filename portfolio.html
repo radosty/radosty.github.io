@@ -206,6 +206,18 @@
           <img src="scatterplot.png" alt="Original chart image" width="700" height="700">
       </div>
   </section>
+  <section></section>
+    <div class="chart-description">
+      <h2>Task 10: Option 2 Interactive Charts</h2>
+      <p>
+        For this task, I loaded the data into Google Colab. Using pandas, I filtered Parmesan and Soft Continental Cheese data by IDs, extracted year_month, computed average prices, reshaped with pivot, renamed columns, removed missing values, and exported a cleaned CSV:</p>
+        <p><a href= "https://github.com/radosty/radosty.github.io/blob/f18bfbfb639a5a2b3ef3aa8fec940dafc783a479/task9.ipynb" target="_blank">Click here to view the data processing</a></p>
+        <p>Parmesan Price Graph:</p>
+        <figure id="Location16"></figure>
+      <p>Soft Continental Cheese Price Graph:</p>
+      <figure id="Location17"></figure>
+  </div>
+</section>
   <section>
     <div class="chart-description">
       <h2>Task 10: Option 2 Interactive Charts</h2>
@@ -247,7 +259,10 @@
             vegaEmbed('#Location14', figure_14_spec)
             let figure_15_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/digitalpaymentadoption.json";
             vegaEmbed('#Location15', figure_15_spec)
-        
+            let figure_16_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/parmesan.json";
+            vegaEmbed('#Location16', figure_16_spec)
+            let figure_17_spec = "https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/softcontinental.json";
+            vegaEmbed('#Location17', figure_17_spec)
         };
         const gdpCharts = [
   { id: 'chart-US', url: 'https://raw.githubusercontent.com/radosty/radosty.github.io/refs/heads/main/gdp_United_States.json', subtitle: 'United States' },
@@ -342,6 +357,4 @@ gdpCharts.forEach((chart, index) => {
    </body>
        
    </html>
-   
-
    
