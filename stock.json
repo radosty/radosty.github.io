@@ -5,7 +5,7 @@
     "width": 600,
     "height": 400,
     "title": {
-        "text": "Stock Performance Analysis",
+        "text": "Stock Performance Analysis 2021",
         "subtitle": [
             "Monthly Return (%) and Close Price for Fintech, NASDAQ, and S&P 500",
             "Data Source: Yahoo Finance API"
